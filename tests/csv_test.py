@@ -23,7 +23,7 @@ def convert_data(data, region, timestamp):
 
 def create():
     # Open the CSV file in write mode
-    with open('data/output.csv', mode='w', newline='') as file:
+    with open('data/playercount.csv', mode='w', newline='') as file:
         # Create a CSV writer object
         csv_writer = csv.writer(file)
         
@@ -31,14 +31,14 @@ def create():
         csv_writer.writerows(headers)  # Write multiple rows
 
 def append(data):
-    with open('data/output.csv', mode='a', newline='') as file:
+    with open('data/playercount.csv', mode='a', newline='') as file:
         csv_writer = csv.writer(file)
         if data != "":
             print(data)
             csv_writer.writerow(data)  # Append a new row
 
 def read():
-    with open('data/output.csv', mode='r') as file:
+    with open('data/playercount.csv', mode='r') as file:
         # Create a CSV DictReader object
         csv_reader = csv.DictReader(file)
         
