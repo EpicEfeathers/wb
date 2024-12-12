@@ -32,7 +32,8 @@ jobs:
     # Step 4: Run the Python script
     - name: Run the data collection script
       run: |
-        python playercount/playercount.py
+        OUTPUT=$(python playercount/playercount.py)
+        echo "Output: $OUTPUT"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If interacting with GitHub API
 

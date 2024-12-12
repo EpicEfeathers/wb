@@ -34,7 +34,7 @@ def append(data):
     with open('data/playercount.csv', mode='a', newline='') as file:
         csv_writer = csv.writer(file)
         if data != "":
-            print(data)
+            #print(data)
             csv_writer.writerow(data)  # Append a new row
 
 def read():
@@ -50,4 +50,5 @@ timestamp = (round(time.time()) - first_time)//60//30# for consistent time (ever
 for region in regions:
     data = convert_data(requests.get(f"https://store2.warbrokers.io/293//server_list.php?location={region}").text, region, timestamp)
     append(data)
-#read()
+
+print(f"Ran at {round(time.time())}")
