@@ -5,6 +5,9 @@ on:
     - cron: '*/30 * * * *' # Runs every 30 minutes
   workflow_dispatch: # Allows manual triggering of the workflow
 
+permissions:
+  contents: write # allows to write to files (off by default)
+  
 jobs:
   update-player-data:
     runs-on: ubuntu-latest
