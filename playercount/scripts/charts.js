@@ -1,14 +1,14 @@
 export function displayBarChart(yValues) {
     var xValues = [
-      "USA",
-      "USA_WEST",
       "ASIA",
-      "JAPAN",
+      "AUSTRALIA",
       "EUROPE",
       "INDIA",
-      "AUSTRALIA",
+      "JAPAN",
+      "USA",
+      "USA_WEST",
       "RUSSIA",
-    ];
+    ]
     var barColors = "#999999";
   
     var chart = Chart.getChart("playerCountChart"); // Get the chart instance
@@ -31,6 +31,12 @@ export function displayBarChart(yValues) {
           ],
         },
         options: {
+          scales: {
+            y: {
+              min: 0,
+              max: 80
+            }
+          },
           plugins: {
             legend: {
               display: true,

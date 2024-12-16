@@ -2,7 +2,6 @@ export function populateTime(timeSelect, dateSelect) {
     timeSelect.innerHTML = "";
     let date = new Date(`${dateSelect.value}T00:00:00`); // avoid timezone discrepancy
     let now = new Date();
-    console.log(now.getHours());
   
     if (date.toDateString() == now.toDateString()) {
       for (let hour = 0; hour < now.getHours() + 1; hour++) {

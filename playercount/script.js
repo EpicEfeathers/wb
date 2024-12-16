@@ -1,6 +1,6 @@
 import { displayBarChart } from './scripts/charts.js'
 import { populateTime } from './scripts/selectors.js'
-import { fetchCSV, filterRows } from './scripts/csv_functions.js'
+import { fetchCSV, filterRows, getClassic } from './scripts/csv_functions.js'
 
 const firstTime = 1734319863;
 const today = new Date().toISOString().split("T")[0];
@@ -32,14 +32,10 @@ async function main() {
   globalCSV = await fetchCSV();
 
   // original bar chart
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
-
-  const dateTimeString = `${date}T${time}:00`;
-  const dateTime = Math.floor(new Date(dateTimeString) / 1000); // returns in ms so divide by 1000
-  const formatted = timestampToFormatted(dateTime);
-  let content = filterRows(globalCSV, formatted);
-  displayBarChart(content);
+  const formatted = getTimestampFromSelectors();
+  const region_players = getClassic(globalCSV, formatted);
+  
+  displayBarChart(region_players);
 }
 
 function timestampToFormatted(timestamp) {
@@ -49,17 +45,29 @@ function timestampToFormatted(timestamp) {
   return differenceFormatted;
 }
 
-// On click
-document.getElementById("fetchData").addEventListener("click", () => {
+function getTimestampFromSelectors() {
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
 
   const dateTimeString = `${date}T${time}:00`;
   const dateTime = Math.floor(new Date(dateTimeString) / 1000); // returns in ms so divide by 1000
   const formatted = timestampToFormatted(dateTime);
-  console.log(`Half hours since beginning: ${formatted}`);
+  //console.log(`Half hours since beginning: ${formatted}`);
 
-  let content = filterRows(globalCSV, formatted);
+  return formatted
+}
 
-  displayBarChart(content);
+// On click
+document.getElementById("fetchData").addEventListener("click", () => {
+  const formatted = getTimestampFromSelectors();
+  const region_players = getClassic(globalCSV, formatted);
+
+  displayBarChart(region_players);
 });
+
+
+
+
+
+// Update Footer Date
+document.getElementById("footer").textContent = new Date().getFullYear()
