@@ -4,13 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Player Count</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Historical Player Count</h1>
-  <button id="fetchData">Fetch Data</button>
-  <p id="data"></p>
 
+  <!--Date-->
+  <label for="date">Choose a date:</label>
+  <input type="date" id="date" name="date" min="2024-12-16">
+  <br>
+
+  <!--Time-->
+  <label for="time">Choose a time:</label>
+  <select type="time" id="time" name="time"></select>
+  <br>
+
+  <button id="fetchData">Fetch Data</button>
+
+  <canvas id="playerCountChart" style="width:100%;max-width:700px;height:50%"></canvas>
   
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
