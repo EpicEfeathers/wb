@@ -45,4 +45,4 @@ jobs:
         git diff --quiet && echo "No changes to commit $(date +%s)" && exit 0
         git add data/playercount.csv
         git commit -m "Half hourly update: Server data for $(date +'%Y-%m-%d %H:%M')"
-        git push
+        git push && echo "Push successful at $(date +'%Y-%m-%d %H:%M:%S')"
