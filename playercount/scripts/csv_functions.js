@@ -1,6 +1,6 @@
 export async function fetchCSV() {
     const response = await fetch(
-      "https://raw.githubusercontent.com/epicefeathers/wb/main/data/playercount.csv",
+      "../data/playercount.csv",
     );
     return await response.text();
   }
