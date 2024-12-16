@@ -35,9 +35,16 @@ export function getClassic(csv, timestamp) {
     "RUSSIA",
   ];
   let region_players = []
+  let timestampData = []
 
   const [regions, ...data] = csv.split("\n"); // first index is regions, all following ones are data
-  let timestampData = data.filter(row => Number(row.split(",")[0]) == timestamp)
+  while (timestampData.length == 0) { // In case there is missing data (maybe take avg between the two later?)
+    timestampData = data.filter(row => Number(row.split(",")[0]) == timestamp)
+    if (timestampData.length == 0) {
+      timestamp -= 1
+    }
+  }
+  console.log(`Timestamp data: ${timestampData}`)
   classic_regions.forEach(region => {
     region_players.push(getData(timestampData.toString(), regions, region));
   });

@@ -26,6 +26,8 @@ const timeSelect = document.getElementById("time");
 const dateSelect = document.getElementById("date");
 populateTime(timeSelect, dateSelect);
 dateSelect.addEventListener("change", () => populateTime(timeSelect, dateSelect));
+dateSelect.addEventListener("change", () => showNewChart());
+timeSelect.addEventListener("change", () => showNewChart());
 
 // setup
 async function main() {
@@ -57,14 +59,12 @@ function getTimestampFromSelectors() {
   return formatted
 }
 
-// On click
-document.getElementById("fetchData").addEventListener("click", () => {
+function showNewChart() {
   const formatted = getTimestampFromSelectors();
   const region_players = getClassic(globalCSV, formatted);
 
   displayBarChart(region_players);
-});
-
+}
 
 
 

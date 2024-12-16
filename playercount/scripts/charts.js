@@ -1,3 +1,12 @@
+function getAspectRatio() {
+  console.log(window.innerWidth);
+  if (window.innerWidth < 600) {  // Mobile screens
+    return 1; // 1:1 aspect ratio (square)
+  } else {  // Desktop screens
+    return 2; // 2:1 aspect ratio
+  }
+}
+
 export function displayBarChart(yValues) {
     var xValues = [
       "ASIA",
@@ -31,6 +40,8 @@ export function displayBarChart(yValues) {
           ],
         },
         options: {
+          maintainAspectRatio: true, // Ensure aspect ratio is maintained
+          aspectRatio: getAspectRatio(), // Set the aspect ratio, 2:1 (width:height)
           scales: {
             y: {
               min: 0,
