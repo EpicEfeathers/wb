@@ -3,7 +3,7 @@ import requests
 import time
 import re
 
-FIRST_TIME = 1733961600
+FIRST_TIME = 1734319863
 HEADERS = [['Timestamp', 'Region', 'Servers', 'Players']]
 
 def convert_data(data, timestamp):
