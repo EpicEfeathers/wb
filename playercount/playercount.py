@@ -40,7 +40,7 @@ def read():
             print(row)  # Each row is a dictionary where keys are column names
 
 
-timestamp = (round(time.time()) - FIRST_TIME)//60//30 # gets number of half hours since original timestamp (rounded down)
+timestamp = round(round((round(time.time()) - FIRST_TIME)/60)/30) # gets number of half hours since original timestamp (rounded to the nearest int)
 
 with open('data/playercount.csv', mode='r') as file:
     last_row = file.readlines()[-1] # gets last row of csv file
