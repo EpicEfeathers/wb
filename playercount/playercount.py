@@ -47,7 +47,7 @@ with open('data/playercount.csv', mode='r') as file:
     last_timestamp = int(last_row.split(",")[0]) # gets the timestamp from that row (and converts to int)
 
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
-    data = requests.get("https://store1.warbrokers.io/283/get_player_list.php").text
+    data = requests.get("https://store1.warbrokers.io/301/get_player_list.php").text
     append(convert_data(data, timestamp))
 
 print(f"Ran at {round(time.time())}")
