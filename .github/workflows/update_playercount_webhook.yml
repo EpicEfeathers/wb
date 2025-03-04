@@ -6,7 +6,7 @@ on:
 
 jobs:
   update-csv:
-    runs-on: ubuntu-latest # ubunut linux as free, fast, etc.
+    runs-on: ubuntu-latest # ubuntu linux as free, fast, etc.
 
     steps:
       - name: Checkout repository
