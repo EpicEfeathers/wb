@@ -5,6 +5,9 @@ on:
     types: [update-csv] # looks for job named "update-csv"
   workflow_dispatch:
 
+permissions:
+  contents: write # allows to write to files (off by default)
+
 jobs:
   update-csv:
     runs-on: ubuntu-latest # ubuntu linux as free, fast, etc.
