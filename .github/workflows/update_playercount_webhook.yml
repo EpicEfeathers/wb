@@ -3,6 +3,7 @@ name: Webhook-Triggered Playercount Update
 on:
   repository_dispatch:
     types: [update-csv] # looks for job named "update-csv"
+  workflow_dispatch:
 
 jobs:
   update-csv:
