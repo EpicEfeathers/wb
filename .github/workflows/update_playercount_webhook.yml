@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run CSV update script # runs script to update csv
-        run: python playercount/playercount.py
+      #- name: Run CSV update script # runs script to update csv
+      #  run: python playercount/playercount.py
 
       - name: Commit and push changes # who it was changed by, etc.
         run: |
