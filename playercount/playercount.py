@@ -3,11 +3,11 @@ import requests
 import time
 import re
 
-FIRST_TIME = 1734319863
+FIRST_TIME = 1741125600
 HEADERS = [['Timestamp', 'Region', 'Servers', 'Players']]
 
 def convert_data(data, timestamp):
-    pattern = re.compile(r"([A-Z_]+),[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+,([0-9]+)")
+    pattern = re.compile(r"([A-Z_0-9]+),[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+,([0-9]+)")
     matches = pattern.findall(data)
 
     matches.sort(key=lambda x: x[0])
