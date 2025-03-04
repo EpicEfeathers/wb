@@ -3,7 +3,7 @@ import requests
 import time
 import re
 
-FIRST_TIME = 1741130100
+FIRST_TIME = 1741129650
 
 def convert_data(data, timestamp):
     pattern = re.compile(r"([A-Z_0-9]+),[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+,([0-9]+)")
