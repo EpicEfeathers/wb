@@ -3,8 +3,7 @@ import requests
 import time
 import re
 
-FIRST_TIME = 1741125600
-HEADERS = [['Timestamp', 'Region', 'Servers', 'Players']]
+FIRST_TIME = 1741130100
 
 def convert_data(data, timestamp):
     pattern = re.compile(r"([A-Z_0-9]+),[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+,([0-9]+)")
@@ -17,13 +16,6 @@ def convert_data(data, timestamp):
     data.insert(0, timestamp)
 
     return data
-
-def create():
-    # Open the CSV file in write mode
-    with open('data/playercount.csv', mode='w', newline='') as file:
-        csv_writer = csv.writer(file)
-        
-        csv_writer.writerows(HEADERS)  # Write multiple rows
 
 def append(data):
     with open('data/playercount.csv', mode='a', newline='') as file:
@@ -49,5 +41,6 @@ with open('data/playercount.csv', mode='r') as file:
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
     data = requests.get("https://store1.warbrokers.io/301/get_player_list.php").text
     append(convert_data(data, timestamp))
+    print("Success!")
 
 print(f"Ran at {round(time.time())}")
