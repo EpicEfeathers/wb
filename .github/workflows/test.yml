@@ -1,0 +1,16 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [cron-trigger]  # Event type that you're sending from your script
+
+jobs:
+  trigger_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run the workflow task
+        run: |
+          echo "GitHub Actions workflow triggered!"
