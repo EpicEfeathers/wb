@@ -1,16 +1,18 @@
 name: Triggered Workflow
 
 on:
-  repository_dispatch:
-    types: [cron-trigger]  # Event type that you're sending from your script
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name input'
+        required: true
+        default: 'Mona the Octocat'
 
 jobs:
-  trigger_job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run the workflow task
-        run: |
-          echo "GitHub Actions workflow triggered!"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Print name input
+        run: echo "Hello, ${{ github.event.inputs.name }}"
