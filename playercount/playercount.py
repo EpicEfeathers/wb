@@ -39,8 +39,12 @@ with open('data/playercount.csv', mode='r') as file:
     last_timestamp = int(last_row.split(",")[0]) # gets the timestamp from that row (and converts to int)
 
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
-    data = requests.get("https://store1.warbrokers.io/301/get_player_list.php").text
-    append(convert_data(data, timestamp))
-    print("Success!")
+    data = requests.get("https://store1.warbrokers.io/283/get_player_list.php").text
+
+    if "File not found!" in data: # check if file not found error
+        raise("File not found error! Check magic number hasn't changed.")   
+    else:
+        append(convert_data(data, timestamp))
+        print("Success!")
 
 print(f"Ran at {round(time.time())}")
