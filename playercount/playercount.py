@@ -42,7 +42,7 @@ if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitH
     data = requests.get("https://store1.warbrokers.io/283/get_player_list.php").text
 
     if "File not found!" in data: # check if file not found error
-        raise("File not found error! Check magic number hasn't changed.")   
+        raise Exception("File not found error! Check magic number hasn't changed.")   
     else:
         append(convert_data(data, timestamp))
         print("Success!")
