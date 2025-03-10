@@ -1,70 +1,84 @@
-import { displayBarChart } from './scripts/charts.js'
-import { populateTime } from './scripts/selectors.js'
-import { fetchCSV, filterRows, getClassic } from './scripts/csv_functions.js'
+import * as csv_functions from './scripts/csv_functions.js'
+import * as chart_functions from './scripts/charts.js'
+import * as timezone_functions from './scripts/timezones.js'
+import * as server_choce from './scripts/server_choice.js'
 
-const firstTime = 1734319863;
-const today = new Date().toISOString().split("T")[0];
+const type = "daily"
+let server = "Worldwide"
+const link = "https://raw.githubusercontent.com/EpicEfeathers/wb/main/data/playercount.csv";
+const first_time = 1741129200
 
-let globalCSV = "";
-let classic = [
-  "ASIA",
-  "AUSTRALIA",
-  "EUROPE",
-  "INDIA",
-  "JAPAN",
-  "RUSSIA",
-  "USA",
-  "USA_WEST",
-];
 
-//setup
-main();
-document.getElementById("date").max = today;
-document.getElementById("date").value = today;
+// Async function to fetch and return the data
 
-const timeSelect = document.getElementById("time");
-const dateSelect = document.getElementById("date");
-populateTime(timeSelect, dateSelect);
-dateSelect.addEventListener("change", () => populateTime(timeSelect, dateSelect));
-dateSelect.addEventListener("change", () => showNewChart());
-timeSelect.addEventListener("change", () => showNewChart());
+function timestamps_to_hours(timestamps, utcOffset) {
+    //console.log(timestamps)
 
-// setup
-async function main() {
-  globalCSV = await fetchCSV();
+    const hour_timestamps = []
 
-  // original bar chart
-  const formatted = getTimestampFromSelectors();
-  const region_players = getClassic(globalCSV, formatted);
-  
-  displayBarChart(region_players);
+    for (let timestamp of timestamps) {
+        timestamp = timestamp * 60 * 30 + first_time; // convert it to unix timestamp
+        timestamp = timestamp * 1000; // convert to ms
+
+        const date = new Date(timestamp);
+
+        const hour = (date.getUTCHours() + utcOffset + 24) % 24; // keeps time in bounds of (0-23)
+        let minutes = date.getMinutes();
+
+        if (minutes < 10) {
+            minutes = "0" + minutes
+        }
+
+        hour_timestamps.push(`${hour}:${minutes}`)
+
+    }
+
+    return hour_timestamps
 }
 
-function timestampToFormatted(timestamp) {
-  const difference = timestamp - firstTime;
-  const differenceFormatted = Math.floor(Math.floor(difference / 60) / 30);
+async function processData(utcOffset, server) {
+    let csvData = await csv_functions.fetchCSVData();  // Wait for the data to be ready
+    
+    const timestamps_num = csv_functions.return_number_of_timestamps(type); // returns number of timestamps to look for
+    const serverIndex = csv_functions.return_server_index(csvData[0], server);
+    const currentHalfHour = csv_functions.getCurrentHalfHour(csvData);
+    csvData = csvData.slice(-timestamps_num); // slices data, removing unnecessary parts
+    
+    const timestamps = csv_functions.recentTimestamps(csvData);
+    const hour_timestamps = timestamps_to_hours(timestamps, utcOffset);
+    const playercount = csv_functions.getServerData(csvData, serverIndex);
 
-  return differenceFormatted;
+    chart_functions.createChart(hour_timestamps, playercount);
+
 }
 
-function getTimestampFromSelectors() {
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
+const utcOffset = timezone_functions.populateTimezoneSelectMenu();
+server_choce.populateServerChoice();
+processData(utcOffset, server);  // Calling the function that processes the data
 
-  const dateTimeString = `${date}T${time}:00`;
-  const dateTime = Math.floor(new Date(dateTimeString) / 1000); // returns in ms so divide by 1000
-  const formatted = timestampToFormatted(dateTime);
-  //console.log(`Half hours since beginning: ${formatted}`);
 
-  return formatted
-}
+// listen for timezone changes
+const timezoneSelect = document.getElementById("timezoneSelect");
+timezoneSelect.addEventListener("change", function() {
+    const selectedOffset = timezoneSelect.value;
 
-function showNewChart() {
-  const formatted = getTimestampFromSelectors();
-  const region_players = getClassic(globalCSV, formatted);
+    //console.log("Selected UTC offset:", selectedOffset);
 
-  displayBarChart(region_players);
-}
+    const utcOffset = timezone_functions.updateTimezone(selectedOffset);
+
+    processData(utcOffset, server);
+});
+
+
+// listen for server changes
+const serverSelect = document.getElementById("serverSelect");
+serverSelect.addEventListener("change", function() {
+    const selectedServer = serverSelect.value;
+
+    //console.log("Selected server: ", selectedServer);
+
+    processData(utcOffset, selectedServer)
+});
 
 
 

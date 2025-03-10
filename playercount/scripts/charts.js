@@ -1,59 +1,41 @@
-function getAspectRatio() {
-  console.log(window.innerWidth);
-  if (window.innerWidth < 600) {  // Mobile screens
-    return 1; // 1:1 aspect ratio (square)
-  } else {  // Desktop screens
-    return 2; // 2:1 aspect ratio
-  }
-}
-
-export function displayBarChart(yValues) {
-    var xValues = [
-      "ASIA",
-      "AUSTRALIA",
-      "EUROPE",
-      "INDIA",
-      "JAPAN",
-      "USA",
-      "USA_WEST",
-      "RUSSIA",
-    ]
-    var barColors = "#999999";
-  
+export function createChart(timestamps, playercount) {
     var chart = Chart.getChart("playerCountChart"); // Get the chart instance
-  
-    if (chart) {
-      // Modify the existing chart's dataset
-      chart.data.datasets[0].data = yValues; // Update the data
-      chart.update(); // Re-render the chart with the new data
+
+    if (chart) { // checks whether chart exists to update or create new chart
+        chart.data.labels = timestamps;
+        chart.data.datasets[0].data = playercount;
+
+        chart.update();
     } else {
-      new Chart("playerCountChart", {
-        type: "bar",
-        data: {
-          labels: xValues,
-          datasets: [
-            {
-              backgroundColor: barColors,
-              data: yValues,
-              label: "Player Count",
+        new Chart("playerCountChart", {
+            type: 'line',  // Change this to 'line' for a line chart
+            data: {
+                labels: timestamps, // x-axis labels
+                datasets: [{
+                    label: 'Player Count',  // Dataset label
+                    data: playercount,  // Data points for the line plot
+                    borderColor: 'rgba(75, 192, 192, 1)',  // Line color
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Area under the line color
+                    tension: 0.1  // Smoothing of the line, adjust for curves
+                }]
             },
-          ],
-        },
-        options: {
-          maintainAspectRatio: true, // Ensure aspect ratio is maintained
-          aspectRatio: getAspectRatio(), // Set the aspect ratio, 2:1 (width:height)
-          scales: {
-            y: {
-              min: 0,
-              max: 80
+            options: {
+                responsive: true,  // Makes the chart responsive to window size
+                scales: {
+                    y: {
+                    beginAtZero: true  // Ensure the y-axis starts at 0
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItems) {
+                                return tooltipItems[0].label; // Append " EST" to tooltip label
+                            }
+                        }
+                    }
+                },
             }
-          },
-          plugins: {
-            legend: {
-              display: true,
-            },
-          },
-        },
-      });
+        });
     }
-  }
+}

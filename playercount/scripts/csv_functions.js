@@ -1,62 +1,61 @@
-export async function fetchCSV() {
-    const response = await fetch(
-      "../data/playercount.csv",
-    );
-    return await response.text();
-  }
+const link = "https://raw.githubusercontent.com/EpicEfeathers/wb/main/data/playercount.csv";
+const first_time = 1741129650
 
-
-export function filterRows(csv, value) {
-    const rows = csv.split("\n");
-    const filteredRows = rows.filter((row) => {
-      const columns = row.split(",");
-      return columns[0] == value;
-    });
-  
-    const players = [];
-    filteredRows.forEach((row) => {
-      const column = row.split(",");
-      players.push(column[column.length - 1]);
-    });
-  
-    return players;
-  }
-
-
-export function getClassic(csv, timestamp) {
-  const classic_regions = [
-    "ASIA",
-    "AUSTRALIA",
-    "EUROPE",
-    "INDIA",
-    "JAPAN",
-    "USA",
-    "USA_WEST",
-    "RUSSIA",
-  ];
-  let region_players = []
-  let timestampData = []
-
-  const [regions, ...data] = csv.split("\n"); // first index is regions, all following ones are data
-  while (timestampData.length == 0) { // In case there is missing data (maybe take avg between the two later?)
-    timestampData = data.filter(row => Number(row.split(",")[0]) == timestamp)
-    if (timestampData.length == 0) {
-      timestamp -= 1
+export function return_server_index(csvHeaders, server) {
+    if (server == "Worldwide") {
+        return -1
     }
-  }
-  console.log(`Timestamp data: ${timestampData}`)
-  classic_regions.forEach(region => {
-    region_players.push(getData(timestampData.toString(), regions, region));
-  });
-  return region_players;
+    // returns index of the specific server we are getting playercount from
+    return csvHeaders.indexOf(server);
 }
 
-function getData(data, regions, region) {
+export function return_number_of_timestamps(type) {
+    if (type == "daily") {
+        return 48;
+    }
+}
 
-  let totalPlayers = 0
-  const index = regions.split(",").indexOf(region); // turns regions into an array, and finds the index of the specified region
-  const column = data.split(',');
-  totalPlayers = column[index]
-  
-  return totalPlayers
+export function getCurrentHalfHour(csvData) {
+    // returns the current half hour from the CSV file
+    const currentHalfHour = csvData[csvData.length - 1][0]; // get timestamp of last array
+
+    return currentHalfHour;
+}
+
+export function recentTimestamps(csvData) {
+    const timestamps = []
+    for (let i = 0; i < csvData.length; i ++) {
+        timestamps.push(csvData[i][0])
+    }
+    return timestamps
+}
+
+export function getServerData(csvData, serverIndex) {
+    // gets the specific server's data from the CSV data
+
+    const result = []
+    if (serverIndex == -1) { // check if looking for worldwide data
+        for (let i = 0; i < csvData.length; i ++) {
+            let temp_total = 0;
+            for (let j = 1; j < csvData[0].length - 1; j ++) {
+                temp_total += Number(csvData[i][j]);
+                console.log(csvData[i][j], temp_total)
+            }
+            result.push(temp_total)
+        }
+    } else {
+        for (let i = 0; i < csvData.length; i ++) {
+            result.push(csvData[i][serverIndex])
+        }
+    }
+
+    return result
+}
+
+export async function fetchCSVData() {
+    // fetches the CSV data from the website, and formats it into separate arrays
+    const response = await fetch(link);  // Fetch the data
+    const contents = await response.text();  // Get the text content
+    const rows = contents.split('\n').slice(0, -1);  // Split into rows (removing last blank row)
+    return rows.map(row => row.split(','));  // Return the parsed data
 }
