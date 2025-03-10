@@ -6,6 +6,7 @@ export function return_server_index(csvHeaders, server) {
         return -1
     }
     // returns index of the specific server we are getting playercount from
+    csvHeaders[csvHeaders.length - 1] = csvHeaders[csvHeaders.length - 1].trim() // trims any whitespace or \n \r line breaks from the last item of the array
     return csvHeaders.indexOf(server);
 }
 
@@ -39,7 +40,6 @@ export function getServerData(csvData, serverIndex) {
             let temp_total = 0;
             for (let j = 1; j < csvData[0].length - 1; j ++) {
                 temp_total += Number(csvData[i][j]);
-                console.log(csvData[i][j], temp_total)
             }
             result.push(temp_total)
         }

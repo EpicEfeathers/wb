@@ -15,7 +15,7 @@ export function createChart(timestamps, playercount) {
                     label: 'Player Count',  // Dataset label
                     data: playercount,  // Data points for the line plot
                     borderColor: 'rgba(75, 192, 192, 1)',  // Line color
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Area under the line color
+                    //backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Area under the line color
                     tension: 0.1  // Smoothing of the line, adjust for curves
                 }]
             },
@@ -23,7 +23,10 @@ export function createChart(timestamps, playercount) {
                 responsive: true,  // Makes the chart responsive to window size
                 scales: {
                     y: {
-                    beginAtZero: true  // Ensure the y-axis starts at 0
+                        beginAtZero: true,  // Ensure the y-axis starts at 0
+                        ticks: {
+                            stepSize: 1,  // Set the interval between tick marks to 1 (integer values)
+                        }
                     }
                 },
                 plugins: {
