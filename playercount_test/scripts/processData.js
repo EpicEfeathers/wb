@@ -9,7 +9,7 @@ function fillEmptyData(playercountData, desiredArrayLength) {
     // (e.g. an array of length 25 becomes 30 for a 30-day month)
 
     const nullArray = new Array(desiredArrayLength - playercountData.length).fill([null]); // fills array with null if necessary
-    const updatedPlayercount = nullArray.concat(playercount); // combines the two
+    const updatedPlayercount = nullArray.concat(playercountData); // combines the two
 
     return updatedPlayercount;
 }
@@ -58,7 +58,7 @@ export function processData(csvData, timezone, server, timeframe) {
     const daysInLastMonth = getDaysInLastMonth() // returns number of days in last month
     //const nullArray = new Array(daysInLastMonth - playercount.length).fill([null]) // fills array with null if necessary
     //const updatedPlayercount = nullArray.concat(playercount) // combines the two
-
+    const updatedPlayercount = fillEmptyData(playercount, daysInLastMonth); // fills array to necessary length if missing data
 
 
     const averagedPlayercount = returnMovingAvg(updatedPlayercount) // returns the averaged values
