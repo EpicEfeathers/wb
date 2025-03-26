@@ -10,10 +10,33 @@ export function return_server_index(csvHeaders, server) {
     return csvHeaders.indexOf(server);
 }
 
+function oneMonthAgo(date) {
+    // returns the date object of exactly one month ago
+
+    const result = new Date(date);
+    result.setMonth(result.getMonth() - 1); // goes back one month and finds correct date
+
+    return result.getTime(); // convert data object to timestamp
+}
+
+function calculateHalfHourDiff() {
+    // calculates the number of half hours between now and last month at this time
+
+    const now = Date.now()
+    const startDate = oneMonthAgo(now);
+    const diffInMS = now - startDate; // gets difference between the two in ms
+
+    return Math.floor(diffInMS / (60 * 30 * 1000)); // convert ms to number of half hours
+}
+
 export function return_number_of_timestamps(type) {
     if (type == "daily") {
         return 48;
-    }
+    } else if (type == "weekly") {
+        return 336;
+    } else {
+        return calculateHalfHourDiff();
+    };
 }
 
 export function getCurrentHalfHour(csvData) {
@@ -28,6 +51,7 @@ export function recentTimestamps(csvData) {
     for (let i = 0; i < csvData.length; i ++) {
         timestamps.push(csvData[i][0])
     }
+
     return timestamps
 }
 

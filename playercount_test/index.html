@@ -12,15 +12,29 @@
 <body>
     <h1>Historical Player Count</h1>
 
+    <!--<label for="raw-date-toggle">Raw data:</label>
+    <input type="checkbox" id="raw-date-toggle" checked>
+
+    <br>-->
+
     <label for="timezoneSelect">Choose a timezone (if automatic is incorrect):</label>
     <select id="timezoneSelect"></select>
 
     <br>
-    
+
     <label for="serverSelect">Choose a server:</label>
     <select id="serverSelect"></select>
+
+    <br>
+
+    <label for="timeframeSelect">Choose a timeframe:</label>
+    <select id="timeframeSelect">
+        <option value="daily">Past day</option>
+        <option value="weekly">Past week</option>
+        <option selected value="monthly">Past month</option>
+    </select>
     
-    <div style="width: 100%; height: 400px;">
+    <div style="width: 100%; height: 500px;">
         <canvas id="playerCountChart"></canvas>
     </div>
 

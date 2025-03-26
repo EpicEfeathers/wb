@@ -57,7 +57,7 @@ const time_zone_abbreviations = {
 }
 
 export function populateTimezoneSelectMenu() {
-    const selectMenu = document.getElementById("timezoneSelect");
+    const selectMenu = document.getElementById("timezone-select");
 
     const utc_offset = -(new Date().getTimezoneOffset() / 60).toString()
 
