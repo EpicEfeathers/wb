@@ -26,11 +26,14 @@ jobs:
 
       - name: Run CSV update script # runs script to update csv
         run: python playercount/playercount.py
+    
+      - name: Run CSV update script (total playercount)
+        run: python playercount/total_playercount.py
 
       - name: Commit and push changes # who it was changed by, etc.
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add data/playercount.csv
+          git add data/playercount.csv data/total_playercount.csv
           git commit -m "Auto-update CSV $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git push
