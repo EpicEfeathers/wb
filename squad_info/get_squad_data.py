@@ -73,6 +73,9 @@ async def get_player_data(player_uid, session):
     level = data.get("level", 0)
     xp = data.get("xp", 0)
 
+    # coin data
+    coins = data.get("coins", 0)
+
     time_last_seen = data.get("time", 0)
     seen_recently = 1 if time.time() - time_last_seen < 604800 else 0 # 604800s is a week. Count number of recently seen players (1 is that yes, they have played in this week)
 
@@ -87,7 +90,8 @@ async def get_player_data(player_uid, session):
         "games_elo": games_elo,
         "level": level,
         "xp": xp,
-        "seen_recently": seen_recently
+        "seen_recently": seen_recently,
+        "coins": coins
     }
 
     return stats_dict
