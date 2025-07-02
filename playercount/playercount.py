@@ -41,8 +41,8 @@ with open('data/playercount.csv', mode='r') as file:
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
     data = requests.get("https://store1.warbrokers.io/304/get_player_list.php").text
 
-    if "File not found!" in data or "Error! login required" in data: # check if error receiving data
-        raise Exception("File not found error! Check magic number hasn't changed.")   
+    if not re.search(r'\d', data): # if no number in data
+        raise Exception("Error! Check magic number hasn't changed.")   
     else:
         append(convert_data(data, timestamp))
         print("Success!")
