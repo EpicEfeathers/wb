@@ -1,6 +1,8 @@
 name: Webhook-Triggered Squad Data Update
 
 on:
+  schedule:
+    - cron: '0 * * * *' # every hour
   repository_dispatch:
     types: [update-squad-data] # looks for job named update-squad-data
   workflow_dispatch:
@@ -9,7 +11,7 @@ permissions:
   contents: write # needs this permission to write to files
 
 jobs:
-  update-csv:
+  update-squad-data:
     runs-on: ubuntu-latest # free + fast
 
     steps:
