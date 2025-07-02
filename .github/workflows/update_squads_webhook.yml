@@ -1,4 +1,4 @@
-name: Webhook-Triggered Playercount Update
+name: Webhook-Triggered Squad Data Update
 
 on:
   repository_dispatch:
@@ -22,13 +22,10 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install aiohttp
 
-      - name: Run CSV update script
-        run: python playercount/playercount.py
-    
-      - name: Run CSV update script (total playercount)
-        run: python playercount/total_playercount.py
+      - name: Run squad info update script
+        run: python squad_info/squad_data_test.py
 
       - name: Commit and push changes # who it was changed by, etc.
         run: |
