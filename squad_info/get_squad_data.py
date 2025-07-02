@@ -5,18 +5,22 @@ import time
 
 request_count = 0
 
-async def fetch(session, url):
+async def fetch(session, url, retries=5, pause=2):
     '''
     Fetches the specified url
     '''
     global request_count
     request_count += 1 # count number of requests
-    try:
-        async with session.get(url) as response:
-            response.raise_for_status()
-            return await response.json()
-    except Exception as e:
-        raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {e}")
+    for attempt in range(retries):
+        try:
+            async with session.get(url) as response:
+                response.raise_for_status()
+                return await response.json()
+        except Exception as e:
+            if attempt < (retries - 1):
+                await asyncio.sleep(pause)
+            else:
+                raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {e}")
 	
 async def fetch_squad_members(squad, session):
     '''
