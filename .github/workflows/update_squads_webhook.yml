@@ -2,7 +2,7 @@ name: Webhook-Triggered Squad Data Update
 
 on:
   repository_dispatch:
-    types: [update-csv] # looks for job named update-csv
+    types: [update-squad-data] # looks for job named update-squad-data
   workflow_dispatch:
 
 permissions:
@@ -25,12 +25,12 @@ jobs:
         run: pip install aiohttp
 
       - name: Run squad info update script
-        run: python squad_info/squad_data_test.py
+        run: python squad_info/get_squad_data.py
 
       - name: Commit and push changes # who it was changed by, etc.
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add data/playercount.csv data/total_playercount.csv
-          git commit -m "Auto-update CSV $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
+          git add squad_info/squad_data.json
+          git commit -m "Auto-update squad data $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git push
