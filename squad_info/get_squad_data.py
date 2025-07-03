@@ -109,7 +109,8 @@ async def get_squad_data(squad_uids, squad_name, session):
         "games_elo": 0,
         "level": 0,
         "xp": 0,
-        "seen_recently": 0
+        "seen_recently": 0,
+        "coins": 0
     }
 
     for uid in squad_uids:
@@ -156,6 +157,7 @@ async def fetch_all():
         
         # get list of all squads
         squad_list = await fetch(session, "https://wbapi.wbpjs.com/squad/getSquadList")
+        squad_list = ['$$$']
 
         # loop through each squad
         squad_data = {}
