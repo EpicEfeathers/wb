@@ -14,7 +14,7 @@ async def fetch(session, url, retries=5, pause=2):
     request_count += 1 # count number of requests
     for attempt in range(retries):
         try:
-            async with session.get(url, timeout=30) as response:
+            async with session.get(url, timeout=60) as response:
                 response.raise_for_status()
                 return await response.json()
         except aiohttp.ClientResponseError as e:
