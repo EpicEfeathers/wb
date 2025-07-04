@@ -20,18 +20,22 @@ async def fetch(session, url, retries=5, pause=2):
         except aiohttp.ClientResponseError as e:
             print(f"[HTTP ERROR] {e.status} when fetching URL: {url}")
             print(f"Response: {await e.response.text()}")
+            last_exception = e
         except aiohttp.ClientConnectorError as e:
             print(f"[CONNECTION ERROR] Could not connect to {url}: {e}")
+            last_exception = e
         except asyncio.TimeoutError:
             print(f"[TIMEOUT] Timed out while fetching {url}")
+            last_exception = e
         except Exception as e:
             print(f"[UNHANDLED ERROR] {e.__class__.__name__} while fetching {url}")
             traceback.print_exc()
+            last_exception = e
 
         if attempt < (retries - 1):
             await asyncio.sleep(pause)
         else:
-            raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {e}")
+            raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {last_exception}")
 	
 async def fetch_squad_members(squad, session):
     '''
