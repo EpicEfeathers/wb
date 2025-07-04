@@ -2,6 +2,7 @@ import asyncio
 import aiohttp
 import json
 import time
+import traceback
 
 request_count = 0
 
@@ -16,11 +17,21 @@ async def fetch(session, url, retries=5, pause=2):
             async with session.get(url, timeout=30) as response:
                 response.raise_for_status()
                 return await response.json()
+        except aiohttp.ClientResponseError as e:
+            print(f"[HTTP ERROR] {e.status} when fetching URL: {url}")
+            print(f"Response: {await e.response.text()}")
+        except aiohttp.ClientConnectorError as e:
+            print(f"[CONNECTION ERROR] Could not connect to {url}: {e}")
+        except asyncio.TimeoutError:
+            print(f"[TIMEOUT] Timed out while fetching {url}")
         except Exception as e:
-            if attempt < (retries - 1):
-                await asyncio.sleep(pause)
-            else:
-                raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {e}")
+            print(f"[UNHANDLED ERROR] {e.__class__.__name__} while fetching {url}")
+            traceback.print_exc()
+
+        if attempt < (retries - 1):
+            await asyncio.sleep(pause)
+        else:
+            raise Exception(f"[ERROR] Failed to fetch url \"{url}\" \n\nException: {e}")
 	
 async def fetch_squad_members(squad, session):
     '''
