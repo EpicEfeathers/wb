@@ -15,11 +15,16 @@ async def fetch(session, url, retries=5, pause=2):
     for attempt in range(retries):
         try:
             async with session.get(url, timeout=60) as response:
-                response.raise_for_status()
+                if response.status != 200:
+                    text = await response.text()
+                    print(f"[HTTP ERROR] {response.status} when fetching URL: {url}")
+                    print(f"[HTTP ERROR] Response body:\n{text}")
+                    last_exception = Exception(f"HTTP {response.status}: {text}")
+                    continue
+
                 return await response.json()
         except aiohttp.ClientResponseError as e:
             print(f"[HTTP ERROR] {e.status} when fetching URL: {url}")
-            print(f"Response: {await e.response.text()}")
             last_exception = e
         except aiohttp.ClientConnectorError as e:
             print(f"[CONNECTION ERROR] Could not connect to {url}: {e}")
