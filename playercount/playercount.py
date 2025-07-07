@@ -39,8 +39,8 @@ def round_timestamp_to_half_hour(timestamp):
     return round((timestamp // half_hour) * half_hour)
 
 
-timestamp = round(round((round(time.time()) - FIRST_TIME)/60)/30) # gets number of half hours since original timestamp (rounded to the nearest int)
-#timestamp = round_timestamp_to_half_hour(time.time())
+#timestamp = round(round((round(time.time()) - FIRST_TIME)/60)/30) # gets number of half hours since original timestamp (rounded to the nearest int)
+timestamp = round_timestamp_to_half_hour(time.time())
 
 # get latest timestamp
 with open('data/playercount.csv', mode='r', newline='') as file: # newline='' lets CSV module handle newlines ('\n', '\r', etc.)
