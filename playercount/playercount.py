@@ -41,7 +41,7 @@ timestamp = round(round((round(time.time()) - FIRST_TIME)/60)/30) # gets number 
 #timestamp = floor_timestamp_to_half_hour(time.time())
 
 # get latest timestamp
-with open('data/playercount_cleaned.csv', mode='r') as file:
+with open('data/playercount.csv', mode='r') as file:
     lines = file.readlines()
     last_row = lines[-1] # gets last row of csv file
     last_timestamp = int(last_row.split(",")[0]) # gets the timestamp from that row (and converts to int)
