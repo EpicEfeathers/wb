@@ -21,7 +21,7 @@ def convert_data(data, timestamp, known_servers):
     known_servers = check_if_missing_server(known_servers, matches.keys())
 
     # if there is a server in the header list that isn't available, set it's playercount to 0
-    playercounts = [matches.get(server) for server in known_servers]
+    playercounts = [matches.get(server, '0') for server in known_servers]
 
     playercounts.insert(0, timestamp)
 
