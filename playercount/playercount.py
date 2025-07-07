@@ -17,14 +17,13 @@ def convert_data(data, timestamp, known_servers):
     matches.sort(key=lambda x: x[0]) # sort by server name
     matches = dict(matches)
 
-    # if there is a server in the header list that isn't available, set it's playercount to 0
-    playercounts = [matches.get(server, 0) for server in known_servers]
-
     # if there is a server that isn't in the header list, backfill it and track it
-    check_if_missing_server(known_servers, matches.keys())
+    known_servers = check_if_missing_server(known_servers, matches.keys())
+
+    # if there is a server in the header list that isn't available, set it's playercount to 0
+    playercounts = [matches.get(server) for server in known_servers]
 
     playercounts.insert(0, timestamp)
-
 
     return playercounts
 
@@ -49,7 +48,8 @@ with open('data/playercount.csv', mode='r', newline='') as file: # newline='' le
     last_row = lines[-1] # gets last row of csv file
     last_timestamp = int(last_row.split(",")[0]) # gets the timestamp from that row (and converts to int)
 
-    servers = lines[0].split(",")[1:] # remove "Timestamp" from server list
+    headers = lines[0].strip()
+    servers = headers.split(",")[1:] # remove "Timestamp" from server list
 
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
     data = requests.get("https://store1.warbrokers.io/304/get_player_list.php").text
