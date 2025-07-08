@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WarBrokers Stuff</title>
+
+  <link rel="stylesheet" href="website_stuff/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!--<p>Historical player count tracker: <a href="https://epicefeathers.github.io/wb/playercount/">https://epicefeathers.github.io/wb/playercount/</a></p>-->
+
+    <!--Timeframe dropdown-->
+    <label for="timeframe-dropdown">Timeframe:</label>
+    <select id="timeframe-dropdown" name="options">
+        <option>Daily</option>
+    </select>
+    <br><br>
+    <!--Server dropdown-->
+    <label for="server-dropdown">Server:</label>
+    <select id="server-dropdown" name="options">
+        <option>WORLDWIDE</option>
+    </select>
+
+    <canvas id="playercount-chart"></canvas>
+
+    <footer style="position: fixed; bottom: 10px;">© <span id="footer"></span> EpicEfeathers</footer>
+
+    <script type="module" src="website_stuff/scripts.js" defer></script> <!--defer waits until all html is loaded (makes sure chart.js is loaded)-->
+</body>
