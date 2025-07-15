@@ -208,8 +208,8 @@ async def fetch_all():
 start = time.time()
 try:
     asyncio.run(fetch_all())
-except Exception as e:
-    raise Exception(f"[ERROR] Error when trying to fetch squads, falling back to old stats. \n\n{e}")
+except Exception:
+    raise Exception(f"[ERROR] Error when trying to fetch squads, falling back to old stats.")
 print(time.time() - start)
 
 print(f"Number of requests: {request_count}")
