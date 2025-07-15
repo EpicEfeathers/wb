@@ -1,6 +1,5 @@
 import { roundToNearestHalfHour, formatYearlyTimestamps } from '../functions/timestampUtils.js'
 import { createChart } from '../functions/chartUtils.js'
-import { fillMissingTimestamps } from '../functions/fillMissingTimestamps.js'
 
 function getTimestampOneYearAgo() {
     const now = new Date()
@@ -9,19 +8,6 @@ function getTimestampOneYearAgo() {
 
     return roundToNearestHalfHour(oneYearAgo.getTime())
 }
-
-/*function numberOfHalfHoursInPastYear() {
-    const lastYear = getTimestampOneYearAgo()
-    const now = roundToNearestHalfHour(Date.now())
-
-    const diff = now - lastYear
-
-    const halfHours = diff / (30 * 60)
-
-    console.log(`Half hours since last year: ${halfHours}`)
-
-    return halfHours
-}*/
 
 function makeTimestampMap(data) {
     // maps each timestamp to an array for efficient lookups
@@ -33,7 +19,7 @@ function makeTimestampMap(data) {
 }
 
 function timestampsFromPastYear(lastYearTimestamp, currentTimestamp) {
-    let timestampsFromPastYear = []
+    const timestampsFromPastYear = []
     let timestamp = lastYearTimestamp
     while (timestamp <= currentTimestamp) {
         timestampsFromPastYear.push(timestamp)
@@ -68,7 +54,7 @@ export function yearly( {data, header, selectedServer} ) {
     const now = roundToNearestHalfHour(Date.now())
     const timestamps = timestampsFromPastYear(lastYear, now)
 
-    let playercountArray = []
+    const playercountArray = []
     for (const timestamp of timestamps) {
         playercountArray.push(getPlayercountFromTimestamp({
             map: map, 
@@ -78,7 +64,7 @@ export function yearly( {data, header, selectedServer} ) {
     }
 
     console.log(playercountArray)
-   console.log(timestamps)
+    console.log(timestamps)
 
     createChart({
         xAxisLabels: timestamps, 
