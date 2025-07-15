@@ -2,8 +2,6 @@ let myChart = null
 
 export function createChart( {xAxisLabels, hoverLabels, data} ) {
 
-    console.log(xAxisLabels, hoverLabels, data)
-
     const ctx = document.getElementById("playercount-chart")
 
     const maxValue = Math.max(...data)
@@ -34,10 +32,20 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
                 scales: {
                     // only show every 2nd tick for x-values
                     x: {
-                        ticks: {
+                        /*ticks: {
                             callback: function (value, index) {
                                 // Show every 2nd label (or every Nth)
                                 return index % 2 === 0 ? this.getLabelForValue(value) : '';
+                            }
+                        }*/
+                        type: 'time',
+                        time: {
+                            unit: 'day', // or 'week', 'month' depending on bin size
+                            tooltipFormat: 'MMM d',
+                            displayFormats: {
+                                day: 'MMM d',
+                                week: 'MMM d',
+                                month: 'MMM yyyy'
                             }
                         }
                     },
@@ -49,7 +57,7 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
                     }
                 },
 
-                plugins: {
+                /*plugins: {
                     tooltip: {
                         callbacks: {
                         title: function(context) {
@@ -59,7 +67,7 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
                         }
                         }
                     }
-                }
+                }*/
             }
         })
     }

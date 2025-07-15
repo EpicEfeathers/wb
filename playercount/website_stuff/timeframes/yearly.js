@@ -1,5 +1,7 @@
 import { roundToNearestHalfHour, formatYearlyTimestamps } from '../functions/timestampUtils.js'
 import { createChart } from '../functions/chartUtils.js'
+import { createBins } from '../functions/createBins.js'
+
 
 function getTimestampOneYearAgo() {
     const now = new Date()
@@ -63,12 +65,11 @@ export function yearly( {data, header, selectedServer} ) {
         }))
     }
 
-    console.log(playercountArray)
-    console.log(timestamps)
+    const { midnightTimestamps, playercounts} = createBins(timestamps, playercountArray)
 
     createChart({
-        xAxisLabels: timestamps, 
-        hoverLabels: timestamps, 
-        data: playercountArray
+        xAxisLabels: midnightTimestamps, 
+        hoverLabels: midnightTimestamps, 
+        data: playercounts
     })
 }
