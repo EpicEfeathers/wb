@@ -1,4 +1,5 @@
-import { parseData } from './timeframes/daily.js'
+import { daily } from './timeframes/daily.js'
+import { yearly } from './timeframes/yearly.js'
 import { monitorServerDropdown, populateServerDropdown } from './functions/dropdownUtils.js'
 import { splitRows } from './functions/parseCSVData.js'
 
@@ -19,6 +20,15 @@ getPlayercountData().then(csvData => {
         populateServerDropdown(header, defaultServer)
         monitorServerDropdown(data, header)
 
-        parseData(data, header, defaultServer)
+        /*daily({
+            data: data, 
+            header: header, 
+            selectedServer: defaultServer
+        })*/
+        yearly({
+            data: data, 
+            header: header, 
+            selectedServer: defaultServer
+        })
     }
 })
