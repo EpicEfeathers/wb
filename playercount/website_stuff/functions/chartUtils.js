@@ -1,11 +1,21 @@
 let myChart = null
 
-export function createChart( {xAxisLabels, hoverLabels, data} ) {
+function calculateMaxValue(data) {
+    const maxValue = Math.max(...data) // '...' spreads array into individual elements
+    const yMax = maxValue === 0 ? 10 : maxValue * 1.1 // add 10% padding
 
+    return yMax
+}
+
+export function createChart( {xAxisLabels, hoverLabels, data} ) {
+    const scatterData = xAxisLabels.map((label, i) => ({
+        x: label,
+        y: data[i]
+        }));
     const ctx = document.getElementById("playercount-chart")
 
-    const maxValue = Math.max(...data)
-    const yMax = maxValue === 0 ? 10 : maxValue * 1.1 // add 10% padding
+    const yMax = calculateMaxValue(data)
+
 
     // if chart already exists
     if (myChart) {
@@ -15,7 +25,7 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
         myChart.update();
     } else {
         myChart = new Chart(ctx, {
-            type: 'line',
+            /*type: 'line',
 
             data: {
                 labels: xAxisLabels,
@@ -26,6 +36,16 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
                     tension: 0.1,
                     pointRadius: 0, // remove the dots from the chart
                     pointHitRadius: 10 // distance from the dot a hover popup will show
+                }]
+            },*/
+            type: 'scatter', // 🎯 scatter plot!
+            data: {
+                datasets: [{
+                label: 'Player Count',
+                data: scatterData, // array of { x: <date>, y: <value> }
+                showLine: false, // disable line connection between points
+                pointRadius: 3,
+                pointHoverRadius: 6,
                 }]
             },
             options: {
@@ -41,7 +61,7 @@ export function createChart( {xAxisLabels, hoverLabels, data} ) {
                         type: 'time',
                         time: {
                             unit: 'day', // or 'week', 'month' depending on bin size
-                            tooltipFormat: 'MMM d',
+                            tooltipFormat: 'MMM d, yyyy',
                             displayFormats: {
                                 day: 'MMM d',
                                 week: 'MMM d',
