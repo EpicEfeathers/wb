@@ -51,13 +51,33 @@ with open('data/playercount.csv', mode='r', newline='') as file: # newline='' le
     headers = lines[0].strip()
     servers = headers.split(",")[1:] # remove "Timestamp" from server list
 
+def check_if_output_valid(output, servers):
+    '''
+    Checks if the outputted data is in
+    the valid format, to prevent weird errors.
+    '''
+    if len(output) != len(servers) + 1: # +1 to account for timestamp data
+        raise Exception("Wrong amount of data! Either something is missing, or there is too much o.0")
+    
+    if len(str(output[0])) != 10: # if timestamp is correct length (basic check)
+        raise Exception("Something is off with the timestamp.")
+    
+    for server in output[1:]:
+        try:
+            int(server)
+        except ValueError:
+            raise Exception("Something is off about the playercount data.")
+
 if last_timestamp < timestamp: # makes sure not doubling on data (thanks to GitHub Actions poor scheduling)
     data = requests.get("https://store1.warbrokers.io/304/get_player_list.php").text
 
     if not re.search(r'\d', data): # if no number in data
         raise Exception("Error! Check magic number hasn't changed.")   
     else:
-        append(convert_data(data, timestamp, servers))
+        data = convert_data(data, timestamp, servers)
+        check_if_output_valid(data, servers)
+        append(data)
+
         print("Success!")
 
 print(f"Ran at {round(time.time())}")
