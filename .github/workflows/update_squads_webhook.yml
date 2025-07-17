@@ -33,7 +33,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          git add squad_info/squad_data.json
+          git add data/squad_data.json
           git commit -m "Auto-update squad data $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git pull origin main --rebase
           git push
