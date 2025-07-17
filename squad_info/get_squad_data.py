@@ -21,8 +21,11 @@ async def fetch(session, url, retries=5, pause=2):
                     print(f"[HTTP ERROR] Response body:\n{text}")
                     last_exception = Exception(f"HTTP {response.status}: {text}")
                     continue
-
-                return await response.json()
+                
+                try: # if JSON
+                    return await response.json()
+                except aiohttp.ContentTypeError:
+                    return await response.text()
         except aiohttp.ClientResponseError as e:
             print(f"[HTTP ERROR] {e.status} when fetching URL: {url}")
             last_exception = e
@@ -56,7 +59,7 @@ async def fetch_squad_members(squad, session):
     except Exception as e:
         raise Exception(f"[ERROR] Failed to fetch squad members for squad '{squad_data}'")
 
-async def get_player_data(player_uid, session):
+async def get_player_data(player_uid, session, ignored_weapons):
     '''
     Gets and formats relevant player data for a specific uid
     '''
@@ -68,9 +71,11 @@ async def get_player_data(player_uid, session):
     kills_per_vehicle = data.get("kills_per_vehicle", {}) or {} # if value is null (if player has no kills) then return empty dict instead of breaking
     kills_per_weapon = data.get("kills_per_weapon", {}) or {}
 
+
     kills = sum(value for key, value in kills_per_vehicle.items() if key != "v30") # "or {}" if kills_per_vehicle is None
 
-    kills += sum(kills_per_weapon.values())
+    filtered_kills_per_weapon = {key: value for key, value in kills_per_weapon.items() if key not in ignored_weapons}
+    kills += sum(filtered_kills_per_weapon.values())
 
     # deaths data
     deaths_per_weapon = data.get("deaths", {}) or {}
@@ -116,7 +121,7 @@ async def get_player_data(player_uid, session):
 
     return stats_dict
     
-async def get_squad_data(squad_uids, squad_name, session):
+async def get_squad_data(squad_uids, squad_name, session, ignored_weapons):
     '''
     Gets the squad data, using each individual member's uid
     '''
@@ -135,7 +140,7 @@ async def get_squad_data(squad_uids, squad_name, session):
 
     for uid in squad_uids:
         try:
-            player_data = await get_player_data(uid, session) 
+            player_data = await get_player_data(uid, session, ignored_weapons) 
 
             squad_data = {key: squad_data[key] + player_data[key] for key in squad_data}
         except Exception as e:
@@ -145,13 +150,13 @@ async def get_squad_data(squad_uids, squad_name, session):
 
     return squad_data
 
-async def fetch_squad(squad_name, session):
+async def fetch_squad(squad_name, session, ignored_weapons):
     '''
     Function to fetch the necessary data for a squad
     '''
     try:
         squad_members = await fetch_squad_members(squad_name, session)
-        return squad_name, await get_squad_data(squad_members, squad_name, session) # returning squad name makes it easier to parse data
+        return squad_name, await get_squad_data(squad_members, squad_name, session, ignored_weapons) # returning squad name makes it easier to parse data
     except Exception as e:
         raise Exception(f"[ERROR] Error fetching squad \'{squad_name}\'. \n\nException: {e}")
     
@@ -174,6 +179,8 @@ async def fetch_all():
         # first, check is API is up
         await check_api_health(session)
 
+        # get ignored weapons (vehicle weapons that we shouldn't be counting twice)
+        ignored_weapons = await fetch(session, "https://raw.githubusercontent.com/EpicEfeathers/BrokerStats/refs/heads/main/config.py")
         
         # get list of all squads
         squad_list = await fetch(session, "https://wbapi.wbpjs.com/squad/getSquadList")
@@ -187,7 +194,7 @@ async def fetch_all():
             batch = squad_list[i:i+batch_size]
 
             tasks = [
-                fetch_squad(squad_name, session) for squad_name in batch
+                fetch_squad(squad_name, session, ignored_weapons) for squad_name in batch
             ]
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
