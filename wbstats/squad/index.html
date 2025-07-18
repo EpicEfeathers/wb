@@ -8,9 +8,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Squad data</h2>
+
+    <!--Template does not display visually, and if cloned can be reused multiple times-->
+    <template id="summary-template">
+        <div id="summary-data">
+            <h2>Data for </h2>
+            
+            <p>Classic wins: <span class="classic-wins"></span></p>
+            <p>BR wins: <span class="br-wins"></span></p>
+            <p>Total kills: <span class="total-kills"></span></p>
+            <p>Total deaths: <span class="total-deaths"></span></p>
+            <p>Squad KDR: <span class="squad-kdr"></span></p>
+            <p>Avg level: <span class="avg-level"></span></p>
+            <p>Avg kills elo: <span class="avg-kelo"></span></p>
+            <p>Avg games elo: <span class="avg-gelo"></span></p>
+            <p>Members seen recently: <span class="seen-recently"></span></p>
+        </div>
+    </template>
+
+    <div id="summary-data-container">
+        
+    </div>
 
     <footer style="position: fixed; bottom: 10px;">© <span id="footer"></span> EpicEfeathers</footer>
 
-    <script src="scripts.js"></script>
+    <script src="scripts/main.js" type="module"></script>
 </body>
