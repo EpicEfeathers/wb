@@ -1,3 +1,4 @@
+/* ROOT VARIABLES */
 :root {
     --background-color: hsl(0, 0%, 8%);
     --popup-color: hsl(0, 0%, 15%);
@@ -10,22 +11,36 @@
     --text-color: hsl(0, 0%, 80%);
 }
 
+/* BASE ELEMENTS */
 body {
     background-color: var(--background-color) !important; 
     color: var(--white);
     font-family: 'Inter', sans-serif;
 }
 
+/* BASE LAYOUT CONTAINERS */
 .page-container {
     margin: 0 8rem;
 }
 
+#user-data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 1fr is one fraction of available space */
+    gap: 1rem; /* spacing between grid items */
+    padding: 1rem;
+}
+
+/* SUMMARY DATA SECTION */
+
 .summary-data {
     margin: 0 1rem;
 }
-.summary-data h2 {
+.summary-data p {
+    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
+}
+.summary-data h1 {
     text-align: center;
-    margin: 0.1rem 0 0.1rem 0;
+    margin: 0.1rem 0;
 }
 
 .summary-label {
@@ -36,27 +51,37 @@ body {
     font-size: 1.3rem;
 }
 
-.summary-data p {
-    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
-}
-
 .squad-stats-container {
+    padding: 2rem;
+    background-color: var(--popup-color);
+
+    border: 0.1rem solid var(--shadow-color);
+    border-radius: 0.75rem;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); /* 1fr is one fraction of available space */
     gap: 1rem; /* spacing between grid items */
 }
 
+/* PER USER DATA SECTION */
+
 .user-data {
     background-color: var(--popup-color);
-    padding: 16px;
+    padding: 1rem;
 
     border: 0.1rem solid var(--shadow-color);
-    border-radius: 12px;
+    border-radius: 0.75rem;
 }
-
+.user-data p, h3 {
+    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
+}
+.user-data h3 {
+    text-align: center;
+}
 .user-data:hover {
     border-color: var(--red);
     background-color: var(--popup-color-hover);
+    cursor: pointer;
     transition: border-color 0.1s ease, background-color 0.1s ease;
 }
 .user-data:hover hr {
@@ -64,15 +89,7 @@ body {
     transition: border-color 0.1s ease;
 }
 
-.user-data p, h3 {
-    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
-}
-
-.user-data h3 {
-    text-align: center;
-}
-
-.user-stats-container {
+.user-stats-container { /* Turn the stats into a grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); /* 1fr is one fraction of available space */
     gap: 1rem; /* spacing between grid items */
@@ -92,12 +109,4 @@ body {
 .last-seen {
     border-bottom: 0.1rem dotted var(--text-color);
     cursor: help;
-}
-
-
-#user-data-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 1fr is one fraction of available space */
-    gap: 1rem; /* spacing between grid items */
-    padding: 1rem;
 }

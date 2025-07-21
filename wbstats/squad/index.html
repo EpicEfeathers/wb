@@ -30,7 +30,7 @@
         <!--Summary stats template-->
         <template id="summary-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
             <div class="summary-data">
-                <h2>Squad [<span class="squad-name"></span>]</h2>
+                <h1>Squad [<span class="squad-name"></span>]</h1>
 
                 <br>
 
@@ -76,16 +76,18 @@
                         <div class="summary-value avg-gelo"></div>
                     </div>
 
-                    <div class="stat">
-                        <div class="summary-label">Members seen recently</div>
-                        <div class="summary-value seen-recently"></div>
-                    </div>
                 </div>
 
                 <br>
 
                 <div class="stat">
-                        <span class="summary-value member-count"></span>
+                    <span class="summary-value member-count"></span>
+                    <span class="summary-label member-count-label"></span>
+                </div>
+
+                <div class="stat">
+                    <span class="summary-value seen-recently"></span>
+                    <span class="summary-label">active this week</span>
                 </div>
             </div>
         </template>
