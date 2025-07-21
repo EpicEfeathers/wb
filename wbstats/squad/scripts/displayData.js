@@ -1,10 +1,47 @@
-export function displayData(squadData) {
+import { formatLargeNumber, formatTimestamp } from './utils.js'
+
+export function displaySummaryData(squadData) {
     const summaryTemplate = document.getElementById("summary-template") // the template
     const container = document.getElementById("summary-data-container") // main div
 
     const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
 
-    clone.querySelector(".classic-wins").textContent = "5000"
+    clone.querySelector(".squad-name").textContent = squadData["squad_name"] ?? ""
+    const squadMemberCount = squadData["members"].length ?? 0
+    clone.querySelector(".member-count").textContent = `${squadMemberCount} ${squadMemberCount === 1 ? "member" : "members"}` // member vs memberS
+
+    clone.querySelector(".classic-wins").textContent = formatLargeNumber(5000)
+    clone.querySelector(".br-wins").textContent = formatLargeNumber(squadData["br_wins"] ?? 0)
+    clone.querySelector(".total-kills").textContent = formatLargeNumber(squadData["kills"] ?? 0)
+    clone.querySelector(".total-deaths").textContent = formatLargeNumber(squadData["deaths"] ?? 0)
+    clone.querySelector(".squad-kdr").textContent = squadData["kdr"] ?? ""
+    clone.querySelector(".avg-level").textContent = squadData["avg_level"] ?? ""
+    clone.querySelector(".avg-kelo").textContent = squadData["avg_kills_elo"] ?? ""
+    clone.querySelector(".avg-gelo").textContent = squadData["avg_games_elo"] ?? ""
+    clone.querySelector(".seen-recently").textContent = squadData["seen_recently"] ?? 0
+
+    container.appendChild(clone) // add it to the div
+}
+
+
+export function displayUserData(userData) {
+    const summaryTemplate = document.getElementById("user-template") // the template
+    const container = document.getElementById("user-data-container") // main div
+
+    const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
+
+    clone.querySelector(".username").textContent = userData["name"] ?? ""
+    clone.querySelector(".last-seen").textContent = formatTimestamp(userData["last_seen"] ?? 0)
+
+    clone.querySelector(".level").textContent = userData["level"] ?? 0
+    clone.querySelector(".kills").textContent = userData["kills"] ?? 0
+    clone.querySelector(".deaths").textContent = userData["deaths"] ?? 0
+    clone.querySelector(".kdr").textContent = (userData["kills"] ?? 0 / userData["deaths"] ?? 0)
+    clone.querySelector(".classic-wins").textContent = userData["name"] ?? ""
+    clone.querySelector(".br-wins").textContent = userData["br_wins"] ?? ""
+    clone.querySelector(".kelo").textContent = userData["kills_elo"] ?? ""
+    clone.querySelector(".gelo").textContent = userData["games_elo"] ?? ""
+    clone.querySelector(".coins").textContent = userData["coins"] ?? 0
 
     container.appendChild(clone) // add it to the div
 }

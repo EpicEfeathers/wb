@@ -1,0 +1,72 @@
+:root {
+    --background-color: hsl(0, 0%, 8%);
+    --popup-color: hsl(0, 0%, 12%);
+    --shadow-color: hsl(0, 0%, 20%);
+
+    --red: hsl(355, 71%, 51%);
+
+    --white: white;
+    --text-color: hsl(0, 0%, 80%);
+}
+
+body {
+    background-color: var(--background-color) !important; 
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+.summary-data p {
+    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
+}
+.summary-data h2 {
+    margin: 0.1rem 0 0.1rem 0;
+}
+
+.user-data {
+    background-color: var(--popup-color);
+    padding: 16px;
+
+    border: 0.05rem solid var(--shadow-color);
+    border-radius: 12px;
+}
+
+.user-data p, h3 {
+    margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
+}
+
+.user-data h3 {
+    /* Centre text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); /* 1fr is one fraction of available space */
+    gap: 1rem; /* spacing between grid items */
+}
+
+.label {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    /*background-color: gray;*/
+}
+
+.value {
+    color: var(--white);
+    /*background-color: grey;*/
+}
+
+.last-seen {
+    border-bottom: 0.1rem dotted var(--text-color);
+    cursor: help;
+}
+
+
+#user-data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 1fr is one fraction of available space */
+    gap: 1rem; /* spacing between grid items */
+    padding: 1rem;
+}

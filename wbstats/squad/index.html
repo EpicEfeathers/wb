@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WarBrokers Stuff</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarBrokers Stuff</title>
 
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Font init-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!--Template does not display visually, and if cloned can be reused multiple times-->
-    <template id="summary-template">
-        <div id="summary-data">
-            <h2>Data for </h2>
+    <!--Summary stats template-->
+    <template id="summary-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
+        <div class="summary-data">
+            <h2>Squad <span class="squad-name"></span></h2>
+            <p><span class="member-count"></span></p>
+            <br>
             
             <p>Classic wins: <span class="classic-wins"></span></p>
             <p>BR wins: <span class="br-wins"></span></p>
@@ -26,11 +33,76 @@
         </div>
     </template>
 
-    <div id="summary-data-container">
-        
-    </div>
+    <!--User stats template-->
+    <template id="user-template">
+        <div class="user-data">
+            <h3><span class="username"></span></h3>
 
-    <footer style="position: fixed; bottom: 10px;">© <span id="footer"></span> EpicEfeathers</footer>
+            <div class="stat">
+                <span class="label">Last seen</span>
+                <span class="value last-seen" title="Last seen on July 18, 2025 at 2:45 PM"></span>
+            </div>
+
+            <br>
+
+            <div class="user-stats-container">
+                <div class="stat">
+                    <div class="label">Level</div>
+                    <div class="value level"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">Kills</div>
+                    <div class="value kills"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">Deaths</div>
+                    <div class="value deaths"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">KDR</div>
+                    <div class="value kdr"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">Classic wins</div>
+                    <div class="value classic-wins"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">BR wins</div>
+                    <div class="value br-wins"></div>
+                </div>
+                
+                <div class="stat">
+                    <div class="label">Kills elo</div>
+                    <div class="value kelo"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">Games elo</div>
+                    <div class="value gelo"></div>
+                </div>
+
+                <div class="stat">
+                    <div class="label">Coins</div>
+                    <div class="value coins"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!--Parent div for summary data-->
+    <div id="summary-data-container"></div>
+
+    <br>
+
+    <!--Parent div for all user cards-->
+    <div id="user-data-container"></div>
+
+    <footer style="bottom: 10px;">© <span id="footer"></span> EpicEfeathers</footer>
 
     <script src="scripts/main.js" type="module"></script>
 </body>
