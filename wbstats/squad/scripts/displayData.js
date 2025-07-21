@@ -33,15 +33,15 @@ export function displayUserData(userData) {
     clone.querySelector(".username").textContent = userData["name"] ?? ""
     clone.querySelector(".last-seen").textContent = formatTimestamp(userData["last_seen"] ?? 0)
 
-    clone.querySelector(".level").textContent = userData["level"] ?? 0
-    clone.querySelector(".kills").textContent = userData["kills"] ?? 0
-    clone.querySelector(".deaths").textContent = userData["deaths"] ?? 0
+    clone.querySelector(".level").textContent = formatLargeNumber(userData["level"] ?? 0)
+    clone.querySelector(".kills").textContent = formatLargeNumber(userData["kills"] ?? 0)
+    clone.querySelector(".deaths").textContent = formatLargeNumber(userData["deaths"] ?? 0)
     clone.querySelector(".kdr").textContent = (userData["kills"] ?? 0 / userData["deaths"] ?? 0)
     clone.querySelector(".classic-wins").textContent = userData["name"] ?? ""
-    clone.querySelector(".br-wins").textContent = userData["br_wins"] ?? ""
+    clone.querySelector(".br-wins").textContent = formatLargeNumber(userData["br_wins"] ?? "")
     clone.querySelector(".kelo").textContent = userData["kills_elo"] ?? ""
     clone.querySelector(".gelo").textContent = userData["games_elo"] ?? ""
-    clone.querySelector(".coins").textContent = userData["coins"] ?? 0
+    clone.querySelector(".coins").textContent = formatLargeNumber(userData["coins"] ?? 0)
 
     container.appendChild(clone) // add it to the div
 }

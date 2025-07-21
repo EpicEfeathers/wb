@@ -14,93 +14,140 @@
 </head>
 <body>
 
-    <!--Summary stats template-->
-    <template id="summary-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
-        <div class="summary-data">
-            <h2>Squad <span class="squad-name"></span></h2>
-            <p><span class="member-count"></span></p>
-            <br>
-            
-            <p>Classic wins: <span class="classic-wins"></span></p>
-            <p>BR wins: <span class="br-wins"></span></p>
-            <p>Total kills: <span class="total-kills"></span></p>
-            <p>Total deaths: <span class="total-deaths"></span></p>
-            <p>Squad KDR: <span class="squad-kdr"></span></p>
-            <p>Avg level: <span class="avg-level"></span></p>
-            <p>Avg kills elo: <span class="avg-kelo"></span></p>
-            <p>Avg games elo: <span class="avg-gelo"></span></p>
-            <p>Members seen recently: <span class="seen-recently"></span></p>
-        </div>
-    </template>
+    <div class="page-container">
 
-    <!--User stats template-->
-    <template id="user-template">
-        <div class="user-data">
-            <h3><span class="username"></span></h3>
+        <!--Summary stats template-->
+        <template id="summary-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
+            <div class="summary-data">
+                <h2>Squad [<span class="squad-name"></span>]</h2>
 
-            <div class="stat">
-                <span class="label">Last seen</span>
-                <span class="value last-seen" title="Last seen on July 18, 2025 at 2:45 PM"></span>
-            </div>
+                <br>
 
-            <br>
+                <div class="squad-stats-container">
+                    
+                    <div class="stat">
+                        <div class="summary-label">Classic wins</div>
+                        <div class="summary-value classic-wins"></div>
+                    </div>
 
-            <div class="user-stats-container">
-                <div class="stat">
-                    <div class="label">Level</div>
-                    <div class="value level"></div>
+                    <div class="stat">
+                        <div class="summary-label">BR wins</div>
+                        <div class="summary-value br-wins"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Total kills</div>
+                        <div class="summary-value total-kills"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Total deaths</div>
+                        <div class="summary-value total-deaths"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Sqad KDR</div>
+                        <div class="summary-value squad-kdr"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Avg level</div>
+                        <div class="summary-value avg-level"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Avg kills elo</div>
+                        <div class="summary-value avg-kelo"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Avg games elo</div>
+                        <div class="summary-value avg-gelo"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="summary-label">Members seen recently</div>
+                        <div class="summary-value seen-recently"></div>
+                    </div>
                 </div>
 
-                <div class="stat">
-                    <div class="label">Kills</div>
-                    <div class="value kills"></div>
-                </div>
+                <br>
 
                 <div class="stat">
-                    <div class="label">Deaths</div>
-                    <div class="value deaths"></div>
-                </div>
-
-                <div class="stat">
-                    <div class="label">KDR</div>
-                    <div class="value kdr"></div>
-                </div>
-
-                <div class="stat">
-                    <div class="label">Classic wins</div>
-                    <div class="value classic-wins"></div>
-                </div>
-
-                <div class="stat">
-                    <div class="label">BR wins</div>
-                    <div class="value br-wins"></div>
-                </div>
-                
-                <div class="stat">
-                    <div class="label">Kills elo</div>
-                    <div class="value kelo"></div>
-                </div>
-
-                <div class="stat">
-                    <div class="label">Games elo</div>
-                    <div class="value gelo"></div>
-                </div>
-
-                <div class="stat">
-                    <div class="label">Coins</div>
-                    <div class="value coins"></div>
+                        <span class="summary-value member-count"></span>
                 </div>
             </div>
-        </div>
-    </template>
+        </template>
 
-    <!--Parent div for summary data-->
-    <div id="summary-data-container"></div>
+        <!--User stats template-->
+        <template id="user-template">
+            <div class="user-data">
+                <h3><span class="username"></span></h3>
 
-    <br>
+                <div class="stat">
+                    <span class="user-card-label">Last seen</span>
+                    <span class="user-card-value last-seen" title="Last seen on July 18, 2025 at 2:45 PM"></span>
+                </div>
 
-    <!--Parent div for all user cards-->
-    <div id="user-data-container"></div>
+                <hr class="user-stats-hr"> <!-- hr = horizontal rule -->
+
+                <div class="user-stats-container">
+                    <div class="stat">
+                        <div class="user-card-label">Level</div>
+                        <div class="user-card-value level"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">Kills</div>
+                        <div class="user-card-value kills"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">Deaths</div>
+                        <div class="user-card-value deaths"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">KDR</div>
+                        <div class="user-card-value kdr"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">Classic wins</div>
+                        <div class="user-card-value classic-wins"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">BR wins</div>
+                        <div class="user-card-value br-wins"></div>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="user-card-label">Kills elo</div>
+                        <div class="user-card-value kelo"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">Games elo</div>
+                        <div class="user-card-value gelo"></div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="user-card-label">Coins</div>
+                        <div class="user-card-value coins"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!--Parent div for summary data-->
+        <div id="summary-data-container"></div>
+
+        <br>
+
+        <!--Parent div for all user cards-->
+        <div id="user-data-container"></div>
+    </div>
 
     <footer style="bottom: 10px;">© <span id="footer"></span> EpicEfeathers</footer>
 

@@ -1,6 +1,7 @@
 :root {
     --background-color: hsl(0, 0%, 8%);
-    --popup-color: hsl(0, 0%, 12%);
+    --popup-color: hsl(0, 0%, 15%);
+    --popup-color-hover: hsl(0, 0%, 17%);
     --shadow-color: hsl(0, 0%, 20%);
 
     --red: hsl(355, 71%, 51%);
@@ -15,19 +16,52 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+.page-container {
+    margin: 0 8rem;
+}
+
+.summary-data {
+    margin: 0 1rem;
+}
+.summary-data h2 {
+    text-align: center;
+    margin: 0.1rem 0 0.1rem 0;
+}
+
+.summary-label {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.summary-value {
+    font-size: 1.3rem;
+}
+
 .summary-data p {
     margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
 }
-.summary-data h2 {
-    margin: 0.1rem 0 0.1rem 0;
+
+.squad-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); /* 1fr is one fraction of available space */
+    gap: 1rem; /* spacing between grid items */
 }
 
 .user-data {
     background-color: var(--popup-color);
     padding: 16px;
 
-    border: 0.05rem solid var(--shadow-color);
+    border: 0.1rem solid var(--shadow-color);
     border-radius: 12px;
+}
+
+.user-data:hover {
+    border-color: var(--red);
+    background-color: var(--popup-color-hover);
+    transition: border-color 0.1s ease, background-color 0.1s ease;
+}
+.user-data:hover hr {
+    color: var(--red);
+    transition: border-color 0.1s ease;
 }
 
 .user-data p, h3 {
@@ -35,10 +69,7 @@ body {
 }
 
 .user-data h3 {
-    /* Centre text */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .user-stats-container {
@@ -47,15 +78,15 @@ body {
     gap: 1rem; /* spacing between grid items */
 }
 
-.label {
+.user-stats-hr {
+    margin: 1.5rem 0;
+    color: var(--white);
+}
+
+.user-card-label {
     color: var(--text-color);
     font-size: 0.8rem;
     /*background-color: gray;*/
-}
-
-.value {
-    color: var(--white);
-    /*background-color: grey;*/
 }
 
 .last-seen {
