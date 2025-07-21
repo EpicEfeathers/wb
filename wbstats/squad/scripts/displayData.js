@@ -6,19 +6,24 @@ export function displaySummaryData(squadData) {
 
     const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
 
-    clone.querySelector(".squad-name").textContent = squadData["squad_name"] ?? ""
-    const squadMemberCount = squadData["members"].length ?? 0
-    clone.querySelector(".member-count").textContent = `${squadMemberCount} ${squadMemberCount === 1 ? "member" : "members"}` // member vs memberS
+    clone.querySelector(".squad-name").textContent = squadData.squad_name ?? ""
 
-    clone.querySelector(".classic-wins").textContent = formatLargeNumber(5000)
-    clone.querySelector(".br-wins").textContent = formatLargeNumber(squadData["br_wins"] ?? 0)
-    clone.querySelector(".total-kills").textContent = formatLargeNumber(squadData["kills"] ?? 0)
-    clone.querySelector(".total-deaths").textContent = formatLargeNumber(squadData["deaths"] ?? 0)
-    clone.querySelector(".squad-kdr").textContent = squadData["kdr"] ?? ""
-    clone.querySelector(".avg-level").textContent = squadData["avg_level"] ?? ""
-    clone.querySelector(".avg-kelo").textContent = squadData["avg_kills_elo"] ?? ""
-    clone.querySelector(".avg-gelo").textContent = squadData["avg_games_elo"] ?? ""
-    clone.querySelector(".seen-recently").textContent = squadData["seen_recently"] ?? 0
+    const squadMemberCount = squadData.members.length ?? 0
+    clone.querySelector(".member-count-label").textContent = `${squadMemberCount === 1 ? "member" : "members"}` // member vs memberS`
+    clone.querySelector(".member-count").textContent = squadMemberCount
+
+    const classicWins = Object.values(squadData.classic_wins) ?? 0
+    const summedClassicWins = classicWins.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    clone.querySelector(".classic-wins").textContent = formatLargeNumber(summedClassicWins)
+
+    clone.querySelector(".br-wins").textContent = formatLargeNumber(squadData.br_wins ?? 0)
+    clone.querySelector(".total-kills").textContent = formatLargeNumber(squadData.kills ?? 0)
+    clone.querySelector(".total-deaths").textContent = formatLargeNumber(squadData.deaths ?? 0)
+    clone.querySelector(".squad-kdr").textContent = squadData.kdr ?? ""
+    clone.querySelector(".avg-level").textContent = squadData.avg_level ?? ""
+    clone.querySelector(".avg-kelo").textContent = squadData.avg_kills_elo ?? ""
+    clone.querySelector(".avg-gelo").textContent = squadData.avg_games_elo ?? ""
+    clone.querySelector(".seen-recently").textContent = squadData.seen_recently ?? 0
 
     container.appendChild(clone) // add it to the div
 }
@@ -30,18 +35,22 @@ export function displayUserData(userData) {
 
     const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
 
-    clone.querySelector(".username").textContent = userData["name"] ?? ""
-    clone.querySelector(".last-seen").textContent = formatTimestamp(userData["last_seen"] ?? 0)
+    clone.querySelector(".username").textContent = userData.name ?? ""
+    clone.querySelector(".last-seen").textContent = formatTimestamp(userData.last_seen ?? 0)
 
-    clone.querySelector(".level").textContent = formatLargeNumber(userData["level"] ?? 0)
-    clone.querySelector(".kills").textContent = formatLargeNumber(userData["kills"] ?? 0)
-    clone.querySelector(".deaths").textContent = formatLargeNumber(userData["deaths"] ?? 0)
-    clone.querySelector(".kdr").textContent = (userData["kills"] ?? 0 / userData["deaths"] ?? 0)
-    clone.querySelector(".classic-wins").textContent = userData["name"] ?? ""
-    clone.querySelector(".br-wins").textContent = formatLargeNumber(userData["br_wins"] ?? "")
-    clone.querySelector(".kelo").textContent = userData["kills_elo"] ?? ""
-    clone.querySelector(".gelo").textContent = userData["games_elo"] ?? ""
-    clone.querySelector(".coins").textContent = formatLargeNumber(userData["coins"] ?? 0)
+    clone.querySelector(".level").textContent = formatLargeNumber(userData.level ?? 0)
+    clone.querySelector(".kills").textContent = formatLargeNumber(userData.kills ?? 0)
+    clone.querySelector(".deaths").textContent = formatLargeNumber(userData.deaths ?? 0)
+    clone.querySelector(".kdr").textContent = (userData.kills ?? 0 / userData.deaths ?? 0)
+
+    const classicWins = Object.values(userData.classic_wins) ?? 0
+    const summedClassicWins = classicWins.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    clone.querySelector(".classic-wins").textContent = formatLargeNumber(summedClassicWins)
+
+    clone.querySelector(".br-wins").textContent = formatLargeNumber(userData.br_wins ?? "")
+    clone.querySelector(".kelo").textContent = userData.kills_elo ?? ""
+    clone.querySelector(".gelo").textContent = userData.games_elo ?? ""
+    clone.querySelector(".coins").textContent = formatLargeNumber(userData.coins ?? 0)
 
     container.appendChild(clone) // add it to the div
 }
