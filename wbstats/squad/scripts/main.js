@@ -4,12 +4,11 @@ import { searchResults } from './searchResults.js'
 
 async function main(squadName) {
     const allSquadsData = await fetchData() // waits until there is data
+    const squadList = fetchSquadList(allSquadsData)
 
-    displayAllSquadData(squadName, allSquadsData)
+    displayAllSquadData(squadName, allSquadsData, squadList)
 
     document.body.classList.add('ready'); /* Show data */
-
-    const squadList = await fetchSquadList()
 
     searchResults(squadList, allSquadsData)
 }

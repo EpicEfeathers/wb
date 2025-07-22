@@ -66,7 +66,36 @@ function display404Error(squadName) {
     container.appendChild(clone)
 }
 
-export function displayAllSquadData(squadName, allSquadsData) {
+function displaySquadList(squadList) {
+    const listTemplate = document.getElementById("squad-list-template") // outer template
+    const squadCardTemplate = document.getElementById("squad-card-template") // inner template
+
+    const container = document.getElementById("squad-list-container") // main div
+
+    const listClone = listTemplate.content.cloneNode(true) // copy it so can use it
+    const listContainer = listClone.querySelector(".squad-list")
+
+    for (const squad of squadList) {
+        const squadCardClone = squadCardTemplate.content.cloneNode(true)
+        const link = squadCardClone.querySelector("a.squad-card")
+
+        link.href = `?squad=${encodeURIComponent(squad)}`;
+
+        squadCardClone.querySelector(".squad-card-name").textContent = squad
+
+        listContainer.appendChild(squadCardClone)
+    }
+    container.appendChild(listClone)
+}
+
+export function displayAllSquadData(squadName, allSquadsData, squadList) {
+    if (squadName == "" || squadName === null) {
+        displaySquadList(squadList)
+        document.title = `Squads`
+        return
+    } else {
+        console.log(squadName, typeof(squadName))
+    }
     const doesSquadExist = (squadName in allSquadsData)
     if (!doesSquadExist) {
         display404Error(squadName)

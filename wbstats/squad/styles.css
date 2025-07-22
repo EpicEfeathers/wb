@@ -19,6 +19,29 @@
     position: relative;
 }
 
+/* SQUAD CARD */
+
+.squad-card {
+    display: block;
+    width: 100%;
+
+    background-color: var(--popup-color);
+    color: inherit;
+    text-decoration: none; /* remove link underline */
+    
+    padding: 1rem;
+    border: 0.1rem solid var(--shadow-color);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+.squad-card:hover {
+    border-color: var(--red);
+    background-color: var(--popup-color-hover);
+    /*cursor: pointer;*/
+    transition: border-color 0.1s ease, background-color 0.1s ease;
+}
+
+
 /* SUMMARY DATA SECTION */
 
 .summary-data {
