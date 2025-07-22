@@ -1,21 +1,25 @@
-import { fetchData } from './fetchData.js'
 import { fetchData, fetchSquadList } from './fetchData.js'
 import { displayAllSquadData } from './displayData.js'
 import { searchResults } from './searchResults.js'
 
-async function main() {
+async function main(squadName) {
     const allSquadsData = await fetchData() // waits until there is data
-
-    const squadName = "CAESAR"
 
     displayAllSquadData(squadName, allSquadsData)
 
-    searchResults(allSquadsData)
+
     const squadList = await fetchSquadList()
+
     searchResults(squadList, allSquadsData)
 }
 
-main()
+// When window loads
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search)
+    const squadName = params.get('squad')  // gets the value of ?squad=
+
+    main(squadName)
+});
 
 
 
