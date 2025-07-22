@@ -1,4 +1,5 @@
 import { fetchData } from './fetchData.js'
+import { fetchData, fetchSquadList } from './fetchData.js'
 import { displayAllSquadData } from './displayData.js'
 import { searchResults } from './searchResults.js'
 
@@ -10,6 +11,8 @@ async function main() {
     displayAllSquadData(squadName, allSquadsData)
 
     searchResults(allSquadsData)
+    const squadList = await fetchSquadList()
+    searchResults(squadList, allSquadsData)
 }
 
 main()

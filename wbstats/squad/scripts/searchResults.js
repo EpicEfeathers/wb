@@ -4,6 +4,7 @@ const squads = ["$$$","-=SYN=-","-ARROW->","-GIGN-","-Rebel-","-U_A-",".INJ",".M
 
 export function searchResults(allSquadsData) {
     const input = document.querySelector(".squad-search-input")
+export function searchResults(squadList, allSquadsData) {
     const results = document.querySelector(".search-results")
 
     // Detect any key press (so showing popup results)
@@ -14,6 +15,7 @@ export function searchResults(allSquadsData) {
         if (query == "") return
 
         const matches = squads.filter( name => name.toLowerCase().includes(query.toLowerCase()))
+        const matches = squadList.filter( name => name.toLowerCase().includes(query.toLowerCase()))
 
         if (matches.length == 0) {
             results.innerHTML = "<div>No results...</div"
