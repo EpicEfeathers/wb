@@ -28,6 +28,27 @@
 
     <div class="page-container">
 
+        <!--Squad list template-->
+        <template id="squad-list-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
+            <div class="squad-list">
+                <div class="title-search-bar">
+                    <h1>Squads</h1>
+                    
+                    <div class="search-container">
+                        <input type="text" placeholder="Squad Name" class="search-bar squad-search-bar">
+                        <div class="search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!--Squad "card" template-->
+        <template id="squad-card-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
+            <a href="#" class="squad-card">
+                <span class="squad-card-name">
+            </a>
+        </template>
+
         <!--Squad not found template-->
         <template id="not-found-template">
             <div class="not-found">
@@ -170,15 +191,15 @@
             </div>
         </template>
 
-        <!--Parent div for 404 not found error-->
+        <div id="squad-list-container"></div>
+
         <div id="404-not-found-container"></div>
 
-        <!--Parent div for summary data-->
+        
         <div id="summary-data-container"></div>
 
         <br>
 
-        <!--Parent div for all user cards-->
         <div id="user-data-container"></div>
     </div>
 
