@@ -70,11 +70,11 @@ export function displayAllSquadData(squadName, allSquadsData) {
     const doesSquadExist = (squadName in allSquadsData)
     if (!doesSquadExist) {
         display404Error(squadName)
+        document.title = `404 Squad "${squadName}" does not exist.`
         return
     }
         
     const squadData = allSquadsData[squadName]
-
     displaySummaryData(squadData)
 
     const squadMembers = squadData.members ?? []
@@ -82,4 +82,6 @@ export function displayAllSquadData(squadName, allSquadsData) {
     for (const index in squadMembers) {
         displayUserData(squadMembers[index])
     }
+
+    document.title = `Squad [${squadName}]`
 }
