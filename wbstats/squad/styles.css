@@ -2,7 +2,7 @@
 :root {
     --background-color: hsl(0, 0%, 8%);
     --popup-color: hsl(0, 0%, 15%);
-    --popup-color-hover: hsl(0, 0%, 17%);
+    --popup-color-hover: hsl(0, 0%, 20%);
     --shadow-color: hsl(0, 0%, 20%);
 
     --red: hsl(355, 71%, 51%);
@@ -36,13 +36,55 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
-.search-input {
+.search-wrapper {
+    position: relative;
+    /*width: 20rem;*/
+}
+
+.search-results {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  max-height: 20rem;
+  background: var(--popup-color);
+
+  border: 0.1rem solid var(--shadow-color);
+  border-top: none;
+
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 0.25rem;
+}
+
+.search-results::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.search-results div {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.search-results div:hover {
+  background-color: var(--popup-color-hover);
+}
+
+.squad-search-input {
     padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid var(--shadow-color);
     background-color: var(--popup-color);
+
+    font-size: 16px;
+    color: var(--white);
+
+    border: 1px solid var(--shadow-color);
     border-radius: 8px;
     outline: none;
 
@@ -50,6 +92,7 @@ body {
 }
 .search-input:focus {
     outline: 0.1rem solid var(--red);
+    transition: outline 0.1s ease;
 }
 
 /* SUMMARY DATA SECTION */

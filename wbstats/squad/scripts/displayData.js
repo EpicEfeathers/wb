@@ -54,3 +54,15 @@ export function displayUserData(userData) {
 
     container.appendChild(clone) // add it to the div
 }
+
+export function displayAllSquadData(squadName, allSquadsData) {
+    const squadData = allSquadsData[squadName]
+
+    displaySummaryData(squadData)
+
+    const squadMembers = squadData.members ?? []
+    squadMembers.sort((a, b) => b.last_seen - a.last_seen)
+    for (const index in squadMembers) {
+        displayUserData(squadMembers[index])
+    }
+}

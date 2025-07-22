@@ -1,23 +1,18 @@
 import { fetchData } from './fetchData.js'
-import { displaySummaryData, displayUserData } from './displayData.js'
+import { displayAllSquadData } from './displayData.js'
+import { searchResults } from './searchResults.js'
 
 async function main() {
     const allSquadsData = await fetchData() // waits until there is data
-    const squadName = "$$$"
 
-    const squadData = allSquadsData[squadName]
+    const squadName = "CAESAR"
 
-    displaySummaryData(squadData)
+    displayAllSquadData(squadName, allSquadsData)
 
-    const squadMembers = squadData.members ?? []
-    squadMembers.sort((a, b) => b.last_seen - a.last_seen)
-    for (const index in squadMembers) {
-        displayUserData(squadMembers[index])
-    }
+    searchResults(allSquadsData)
 }
 
 main()
-
 
 
 
