@@ -28,16 +28,19 @@ export function formatTimestamp(timestamp) {
     // relative time
     let relativeTime = ""
 
-    if (diffSec < 60) {
+    /*if (diffSec < 60) {
         relativeTime = `${diffSec} second${diffSec == 1 ? "" : "s"}`
+    } else if (diffMin < 60) {*/
+    if (diffMin < 15) { /* Account for caching being every 15 mins */
+        relativeTime = `Now`
     } else if (diffMin < 60) {
-        relativeTime = `${diffMin} minute${diffMin == 1 ? "" : "s"}`
+        relativeTime = `${diffMin} minute${diffMin == 1 ? "" : "s"} ago`
     } else if (diffHours < 24) {
-        relativeTime = `${diffHours} hour${diffHours == 1 ? "" : "s"}`
+        relativeTime = `${diffHours} hour${diffHours == 1 ? "" : "s"} ago`
     } else {
-        relativeTime = `${diffDays} day${diffDays == 1 ? "" : "s"}`
+        relativeTime = `${diffDays} day${diffDays == 1 ? "" : "s"} ago`
     }
 
     //return `${formattedDate} at ${formattedTime}`
-    return `${relativeTime} ago`
+    return relativeTime
 }
