@@ -28,14 +28,23 @@
 
     <div class="page-container">
 
+        <!--Squad not found template-->
+        <template id="not-found-template">
+            <div class="not-found">
+                <h1>404 Not Found</h1>
+
+                <p>Squad "<span class="not-found-squad-name"></span>" does not exist.</p>
+            </div>
+        </template>
+
         <!--Summary stats template-->
         <template id="summary-template"> <!--Template does not display visually, and if cloned can be reused multiple times-->
             <div class="summary-data">
                 <div class="title-search-bar">
                     <h1>Squad [<span class="squad-name"></span>]</h1>
                     
-                    <div class="search-wrapper">
-                        <input type="text" placeholder="Squad Name" class="squad-search-input">
+                    <div class="search-container">
+                        <input type="text" placeholder="Squad Name" class="search-bar squad-search-bar">
                         <div class="search-results"></div>
                     </div>
                 </div>
@@ -160,6 +169,9 @@
                 </div>
             </div>
         </template>
+
+        <!--Parent div for 404 not found error-->
+        <div id="404-not-found-container"></div>
 
         <!--Parent div for summary data-->
         <div id="summary-data-container"></div>

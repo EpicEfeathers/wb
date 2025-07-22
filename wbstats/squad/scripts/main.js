@@ -7,6 +7,7 @@ async function main(squadName) {
 
     displayAllSquadData(squadName, allSquadsData)
 
+    document.body.classList.add('ready'); /* Show data */
 
     const squadList = await fetchSquadList()
 

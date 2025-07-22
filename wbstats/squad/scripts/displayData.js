@@ -55,7 +55,24 @@ export function displayUserData(userData) {
     container.appendChild(clone) // add it to the div
 }
 
+function display404Error(squadName) {
+    const summaryTemplate = document.getElementById("not-found-template") // the template
+    const container = document.getElementById("404-not-found-container") // main div
+
+    const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
+
+    clone.querySelector(".not-found-squad-name").textContent = squadName
+
+    container.appendChild(clone)
+}
+
 export function displayAllSquadData(squadName, allSquadsData) {
+    const doesSquadExist = (squadName in allSquadsData)
+    if (!doesSquadExist) {
+        display404Error(squadName)
+        return
+    }
+        
     const squadData = allSquadsData[squadName]
 
     displaySummaryData(squadData)
