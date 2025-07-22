@@ -30,6 +30,28 @@ body {
     padding: 1rem;
 }
 
+/* TOP TITLE + SEARCH BAR */
+
+.title-search-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid var(--shadow-color);
+    background-color: var(--popup-color);
+    border-radius: 8px;
+    outline: none;
+
+    caret-color: var(--white); /* flashing cursor color */
+}
+.search-input:focus {
+    outline: 0.1rem solid var(--red);
+}
+
 /* SUMMARY DATA SECTION */
 
 .summary-data {
@@ -39,7 +61,7 @@ body {
     margin: 0.1rem 0; /* top & right (if bottom & left aren't specified, defaults to the other side) */
 }
 .summary-data h1 {
-    text-align: center;
+    /*text-align: center;*/
     margin: 0.1rem 0;
 }
 
