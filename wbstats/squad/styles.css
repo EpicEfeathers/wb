@@ -5,7 +5,7 @@
 
 #user-data-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* 1fr is one fraction of available space */
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr)); /* 1fr is one fraction of available space */
     gap: 1rem; /* spacing between grid items */
     padding: 1rem;
 }
