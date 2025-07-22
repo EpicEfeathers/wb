@@ -7,6 +7,8 @@
 
     --red: hsl(355, 71%, 51%);
 
+    --tippy-color: hsla(0, 0%, 30%, 0.9);
+
     --white: hsl(0, 0%, 95%);
     --text-color: hsl(0, 0%, 80%);
 }
@@ -112,4 +114,15 @@ body.ready {
 
 .search-results div:hover {
   background-color: var(--popup-color-hover);
+}
+
+/* TIPPY TOOLTIPS */
+
+.tippy-box[data-theme~='custom'] {
+    background-color: var(--tippy-color);
+    box-shadow: 0 0 10px var(--popup-color);
+}
+
+.tippy-box[data-theme~='custom'] .tippy-arrow::before {
+    color: var(--tippy-color);
 }

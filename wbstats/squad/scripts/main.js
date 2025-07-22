@@ -18,11 +18,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search)
     const squadName = params.get('squad')  // gets the value of ?squad=
 
-    main(squadName)
+    main(squadName).then(() => { // wait until the text is shown to init tippy
+        tippy('.last-seen', {
+            theme: 'custom'
+        })
+    })
 });
-
-
-
 
 
 

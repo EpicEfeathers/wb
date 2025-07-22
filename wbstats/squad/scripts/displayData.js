@@ -93,9 +93,8 @@ export function displayAllSquadData(squadName, allSquadsData, squadList) {
         displaySquadList(squadList)
         document.title = `Squads`
         return
-    } else {
-        console.log(squadName, typeof(squadName))
     }
+    
     const doesSquadExist = (squadName in allSquadsData)
     if (!doesSquadExist) {
         display404Error(squadName)
