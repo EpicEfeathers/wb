@@ -1,0 +1,115 @@
+/* ROOT VARIABLES */
+:root {
+    --background-color: hsl(0, 0%, 8%);
+    --popup-color: hsl(0, 0%, 15%);
+    --popup-color-hover: hsl(0, 0%, 20%);
+    --shadow-color: hsl(0, 0%, 20%);
+
+    --red: hsl(355, 71%, 51%);
+
+    --white: white;
+    --text-color: hsl(0, 0%, 80%);
+}
+
+/* BASE ELEMENTS */
+body {
+    background-color: var(--background-color) !important; 
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+
+    margin: 0; /* For header */
+}
+
+body { /* For when loading, not to flashbang user */
+  opacity: 0;
+}
+body.ready {
+  opacity: 1;
+}
+
+/* HEADER */
+    header {
+        line-height: 1;
+        display: flex;
+        justify-content: space-between; /* push items to edges */
+        align-items: center; /* vertically centre items */
+        background-color: var(--popup-color);
+        color: white;
+        
+        padding: 1rem 3rem;
+        border-bottom: 0.1rem solid var(--shadow-color);
+    }
+    header h2 {
+        margin: 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 2rem;
+    }
+    nav a:hover {
+        color: var(--red);
+        transition: color 0.1s ease;
+    }
+
+/* SEARCH BAR */
+
+.search-bar {
+    padding: 8px 12px;
+    background-color: var(--popup-color);
+
+    font-size: 16px;
+    color: var(--white);
+
+    border: 1px solid var(--shadow-color);
+    border-radius: 8px;
+    outline: none;
+
+    caret-color: var(--white); /* flashing cursor color */
+}
+.search-bar:focus {
+    outline: 0.1rem solid var(--red);
+    transition: outline 0.1s ease;
+}
+
+.search-container {
+    position: relative;
+    /*width: 20rem;*/
+}
+
+.search-results {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    max-height: 20rem;
+    background: var(--popup-color);
+
+    border: 0.1rem solid var(--shadow-color);
+    border-top: none;
+
+    overflow-y: auto;
+    z-index: 100;
+}
+.search-results:empty { /* Removes annooying thin horizontal bar beneath search box */
+    display: none;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    border-radius: 0.25rem;
+}
+
+.search-results::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+.search-results div {
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.search-results div:hover {
+  background-color: var(--popup-color-hover);
+}
