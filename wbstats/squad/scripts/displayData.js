@@ -36,7 +36,10 @@ export function displayUserData(userData) {
     const clone = summaryTemplate.content.cloneNode(true) // copy it so we can use it
 
     clone.querySelector(".username").textContent = userData.name ?? ""
-    clone.querySelector(".last-seen").textContent = formatTimestamp(userData.last_seen ?? 0)
+
+    const {relativeTime, lastSeenTime} = formatTimestamp(userData.last_seen ?? 0)
+    const lastSeenSpan = clone.querySelector(".last-seen")
+    clone.querySelector(".last-seen").textContent = relativeTime
 
     clone.querySelector(".level").textContent = formatLargeNumber(userData.level ?? 0)
     clone.querySelector(".kills").textContent = formatLargeNumber(userData.kills ?? 0)
@@ -52,7 +55,19 @@ export function displayUserData(userData) {
     clone.querySelector(".gelo").textContent = userData.games_elo ?? ""
     clone.querySelector(".coins").textContent = formatLargeNumber(userData.coins ?? 0)
 
+    const lastSeenElem = clone.querySelector(".last-seen");
+
     container.appendChild(clone) // add it to the div
+
+    tippy(lastSeenElem, {
+        content: lastSeenTime,
+        arrow: true,
+        placement: "top",
+
+        theme: 'custom'
+    });
+
+    console.log(lastSeenElem)
 }
 
 function display404Error(squadName) {
@@ -94,7 +109,7 @@ export function displayAllSquadData(squadName, allSquadsData, squadList) {
         document.title = `Squads`
         return
     }
-    
+
     const doesSquadExist = (squadName in allSquadsData)
     if (!doesSquadExist) {
         display404Error(squadName)
