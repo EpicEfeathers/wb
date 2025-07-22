@@ -41,7 +41,7 @@ export function displayUserData(userData) {
     clone.querySelector(".level").textContent = formatLargeNumber(userData.level ?? 0)
     clone.querySelector(".kills").textContent = formatLargeNumber(userData.kills ?? 0)
     clone.querySelector(".deaths").textContent = formatLargeNumber(userData.deaths ?? 0)
-    clone.querySelector(".kdr").textContent = (userData.kills ?? 0 / userData.deaths ?? 0)
+    clone.querySelector(".kdr").textContent = ((userData.kills ?? 0) / (userData.deaths ?? 0)).toFixed(1)
 
     const classicWins = Object.values(userData.classic_wins) ?? 0
     const summedClassicWins = classicWins.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
