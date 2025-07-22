@@ -7,7 +7,7 @@
 
     --red: hsl(355, 71%, 51%);
 
-    --white: white;
+    --white: hsl(0, 0%, 95%);
     --text-color: hsl(0, 0%, 80%);
 }
 
@@ -34,7 +34,7 @@ body.ready {
         justify-content: space-between; /* push items to edges */
         align-items: center; /* vertically centre items */
         background-color: var(--popup-color);
-        color: white;
+        color: var(--white);
         
         padding: 1rem 3rem;
         border-bottom: 0.1rem solid var(--shadow-color);
@@ -44,7 +44,7 @@ body.ready {
     }
 
     nav a {
-        color: white;
+        color: var(--white);
         text-decoration: none;
         margin-left: 2rem;
     }
