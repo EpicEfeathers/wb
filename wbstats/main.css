@@ -70,6 +70,11 @@ body.ready {
 
     caret-color: var(--white); /* flashing cursor color */
 }
+@media (max-width: 30rem) {
+    .search-bar {
+        max-width: 8rem; 
+    }
+}
 .search-bar:focus {
     outline: 0.1rem solid var(--red);
     transition: outline 0.1s ease;

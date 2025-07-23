@@ -2,6 +2,11 @@
 .page-container {
     margin: 0 10rem;
 }
+@media (max-width: 50rem) {
+    .page-container {
+        margin: 0 1rem; /* or whatever value fits your design */
+    }
+}
 
 #user-data-container {
     display: grid;
@@ -17,6 +22,11 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+}
+@media (max-width: 30rem) {
+    .squad-name-header {
+        font-size: 1.5rem;
+    }
 }
 
 /* SQUAD CARD */
