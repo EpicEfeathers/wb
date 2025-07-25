@@ -2,9 +2,15 @@
 .page-container {
     margin: 0 10rem;
 }
+<<<<<<< Updated upstream
 @media (max-width: 50rem) {
     .page-container {
         margin: 0 1rem; /* or whatever value fits your design */
+=======
+@media (max-width: 30rem) {
+    .page-container {
+        margin: 0 1rem;
+>>>>>>> Stashed changes
     }
 }
 
@@ -14,6 +20,14 @@
     gap: 1rem; /* spacing between grid items */
     padding: 1rem;
 }
+<<<<<<< Updated upstream
+=======
+@media (max-width: 30rem) {
+    #user-data-container {
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    }
+}
+>>>>>>> Stashed changes
 
 /* TOP TITLE + SEARCH BAR */
 
