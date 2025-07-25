@@ -22,7 +22,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install aiohttp
+        run: pip install requests
 
       - name: Run CSV update script
         run: python playercount/playercount.py
