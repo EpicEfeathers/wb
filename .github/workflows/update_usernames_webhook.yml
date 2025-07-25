@@ -1,0 +1,37 @@
+name: Webhook-Triggered Username Update
+
+on:
+  repository_dispatch:
+    types: [update-username-json] # looks for job named update-csv
+  workflow_dispatch:
+
+permissions:
+  contents: write # needs this permission to write to files
+
+jobs:
+  update-username-json:
+    runs-on: ubuntu-latest # free + fast
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run CSV update script (usernames)
+        run: python username_history/main.py
+
+      - name: Commit and push changes # who it was changed by, etc.
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add data/username_history.json
+          git commit -m "Auto-update username JSON $(date +'%Y-%m-%d %H:%M:%S')" || exit 0
+          git pull origin main --rebase
+          git push
