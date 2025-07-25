@@ -2,7 +2,7 @@ name: Webhook-Triggered Squad Data Update
 
 on:
   schedule:
-    - cron: '0 * * * *' # every hour
+    - cron: '*/15 * * * *' # every 15 mins
   repository_dispatch:
     types: [update-squad-data] # looks for job named update-squad-data
   workflow_dispatch:
