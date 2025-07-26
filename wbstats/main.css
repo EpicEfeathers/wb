@@ -167,6 +167,10 @@ th.sortable:hover {
     transition: color 0.1s ease;
 }
 
+th.sorted-desc, th.sorted-asc {
+    color: var(--orange);
+}
+
 th.sortable .sort-arrow {
     margin-left: 0.3rem;
     position: absolute;
