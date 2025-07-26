@@ -92,7 +92,7 @@ export function sort(th, weaponRows) {
         sortAscending = !sortAscending // toggle sort descending / ascending
     } else {
         currentSortKey = sortKey
-        sortAscending = true
+        sortAscending = false
     }
 
     weaponRows.sort((a, b) => {
