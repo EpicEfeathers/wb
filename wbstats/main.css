@@ -1,16 +1,20 @@
 /* ROOT VARIABLES */
 :root {
-    --background-color: hsl(0, 0%, 8%);
-    --popup-color: hsl(0, 0%, 15%);
-    --popup-color-hover: hsl(0, 0%, 20%);
-    --shadow-color: hsl(0, 0%, 20%);
+    --background-color: hsl(223, 49%, 12%);
+    --popup-color: hsl(221, 43%, 15%);
+    --popup-color-hover: hsl(221, 43%, 20%);
+    --shadow-color: hsl(215, 28%, 27%);
 
     --red: hsl(355, 71%, 51%);
+    --orange: hsl(18, 77%, 53%);
+    --deep-orange: hsl(10, 77%, 53%);
 
     --tippy-color: hsla(0, 0%, 30%, 0.9);
 
     --white: hsl(0, 0%, 95%);
     --text-color: hsl(0, 0%, 80%);
+
+    --border-radius: 0.75rem;
 }
 
 /* BASE ELEMENTS */
@@ -130,4 +134,82 @@ body.ready {
 
 .tippy-box[data-theme~='custom'] .tippy-arrow::before {
     color: var(--tippy-color);
+}
+
+/* TABLE STUFF */
+
+table {
+    background-color: var(--popup-color);
+
+    border: 0.1rem solid var(--shadow-color);
+    border-radius: var(--border-radius);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+td, th {
+    border-bottom: 0.1rem solid var(--shadow-color);
+
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+th.sortable {
+    cursor: pointer;
+    position: relative;
+}
+th.sortable:hover {
+    color: var(--orange);
+    transition: color 0.1s ease;
+}
+
+th.sortable .sort-arrow {
+    margin-left: 0.3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* So inline with text */
+    font-size: 0.7em;
+    user-select: none; /* User can't select it */
+}
+
+
+.col-large {
+    padding: 0.5rem 4rem 0.5rem 1rem;
+    text-align: left;
+}
+
+/* BUTTONS */
+
+.button-row {
+  display: flex; /* Puts buttons in a row */
+  gap: 0.5rem;      /* Optional: adds space between buttons */
+}
+
+.toggle-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+
+    color: var(--white);
+    background-color: var(--popup-color);
+    border: 0.1rem solid var(--shadow-color);
+    border-radius: var(--border-radius);
+}
+
+.toggle-button:hover {
+    color: var(--orange);
+    border: 0.1rem solid var(--orange);
+    transition: color 0.1s, ease border 0.1s ease;
+
+    cursor: pointer;
+}
+
+.toggle-button.selected {
+    border: 0.1rem solid var(--orange);
+    background: linear-gradient(to right, var(--red), var(--deep-orange));
+    color: var(--white);
+    transition: background-color 0.1s ease, color 0.1s ease;
 }
