@@ -829,6 +829,27 @@
         "squad_name": "50.CAL",
         "members": [
             {
+                "name": "<NAME>",
+                "uid": "66810b10d142af063c53916c",
+                "level": 220,
+                "xp": 5152405,
+                "kills": 24094,
+                "deaths": 8956,
+                "br_wins": 31,
+                "classic_wins": {
+                    "death_match": 1181,
+                    "missile_launch": 94,
+                    "vehicle_escort": 15,
+                    "package_drop": 0,
+                    "capture_point": 17
+                },
+                "jumps": 176785,
+                "coins": 635,
+                "kills_elo": 1640.17,
+                "games_elo": 1999.55,
+                "last_seen": 1755935185
+            },
+            {
                 "name": "Nam_say-Give_me50Cal",
                 "uid": "66f979ebbfea71610c565956",
                 "level": 142,
@@ -848,47 +869,26 @@
                 "kills_elo": 1566.18,
                 "games_elo": 1741.12,
                 "last_seen": 1755933692
-            },
-            {
-                "name": "<NAME>",
-                "uid": "66810b10d142af063c53916c",
-                "level": 220,
-                "xp": 5151560,
-                "kills": 24090,
-                "deaths": 8954,
-                "br_wins": 31,
-                "classic_wins": {
-                    "death_match": 1181,
-                    "missile_launch": 94,
-                    "vehicle_escort": 15,
-                    "package_drop": 0,
-                    "capture_point": 16
-                },
-                "jumps": 176746,
-                "coins": 635,
-                "kills_elo": 1642.32,
-                "games_elo": 1999.55,
-                "last_seen": 1755934678
             }
         ],
         "avg_games_elo": 1870.34,
-        "avg_kills_elo": 1604.25,
+        "avg_kills_elo": 1603.18,
         "avg_level": 181.0,
-        "avg_xp": 4176360.0,
+        "avg_xp": 4176782.5,
         "br_wins": 267,
         "classic_wins": {
             "death_match": 1952,
             "missile_launch": 153,
             "vehicle_escort": 21,
             "package_drop": 0,
-            "capture_point": 23
+            "capture_point": 24
         },
         "coins": 700,
-        "deaths": 13054,
+        "deaths": 13056,
         "kdr": 3.2,
-        "kills": 41995,
+        "kills": 41999,
         "seen_recently": 2,
-        "xp": 8352720
+        "xp": 8353565
     },
     "501st": {
         "squad_name": "501st",
@@ -1802,48 +1802,6 @@
         "squad_name": "AHK",
         "members": [
             {
-                "name": "146-TUF",
-                "uid": "631d3f6bbfea71ba58d70e86",
-                "level": 44,
-                "xp": 762300,
-                "kills": 3346,
-                "deaths": 2351,
-                "br_wins": 12,
-                "classic_wins": {
-                    "death_match": 199,
-                    "missile_launch": 6,
-                    "vehicle_escort": 0,
-                    "package_drop": 4,
-                    "capture_point": 3
-                },
-                "jumps": 39569,
-                "coins": 1068,
-                "kills_elo": 1535.28,
-                "games_elo": 1549.76,
-                "last_seen": 1754404841
-            },
-            {
-                "name": "aoi_kousei m9(^\u0414^)",
-                "uid": "61e14312fd3c7a473ee1882d",
-                "level": 387,
-                "xp": 9332175,
-                "kills": 39679,
-                "deaths": 15674,
-                "br_wins": 35,
-                "classic_wins": {
-                    "death_match": 1479,
-                    "missile_launch": 66,
-                    "vehicle_escort": 26,
-                    "package_drop": 11,
-                    "capture_point": 17
-                },
-                "jumps": 303442,
-                "coins": 2380,
-                "kills_elo": 1754.46,
-                "games_elo": 2095.75,
-                "last_seen": 1752843013
-            },
-            {
                 "name": "KI YO",
                 "uid": "6002d92ebfea71987e24c7a6",
                 "level": 56,
@@ -1865,25 +1823,67 @@
                 "last_seen": 1752410378
             },
             {
-                "name": "482K",
-                "uid": "63900feebfea71301c75c5b6",
-                "level": 110,
-                "xp": 2401150,
-                "kills": 15564,
-                "deaths": 9067,
-                "br_wins": 23,
+                "name": "\u7279\u653b\u306e\u524d\u7530",
+                "uid": "640da8f2d142af5a55effc38",
+                "level": 65,
+                "xp": 1276015,
+                "kills": 4316,
+                "deaths": 1846,
+                "br_wins": 45,
                 "classic_wins": {
-                    "death_match": 904,
-                    "missile_launch": 56,
-                    "vehicle_escort": 16,
-                    "package_drop": 9,
-                    "capture_point": 26
+                    "death_match": 165,
+                    "missile_launch": 9,
+                    "vehicle_escort": 3,
+                    "package_drop": 3,
+                    "capture_point": 3
                 },
-                "jumps": 156841,
-                "coins": 337,
-                "kills_elo": 1586.42,
-                "games_elo": 1601.77,
-                "last_seen": 1752401358
+                "jumps": 17851,
+                "coins": 1622,
+                "kills_elo": 1613.82,
+                "games_elo": 1484.33,
+                "last_seen": 1719050608
+            },
+            {
+                "name": "U.S.A.RMY",
+                "uid": "636d73b3bfea711109b2a37c",
+                "level": 65,
+                "xp": 1288000,
+                "kills": 6988,
+                "deaths": 2721,
+                "br_wins": 3,
+                "classic_wins": {
+                    "death_match": 321,
+                    "missile_launch": 24,
+                    "vehicle_escort": 13,
+                    "package_drop": 7,
+                    "capture_point": 5
+                },
+                "jumps": 59775,
+                "coins": 230,
+                "kills_elo": 1644.44,
+                "games_elo": 1655.48,
+                "last_seen": 1704261679
+            },
+            {
+                "name": "ookamikunn",
+                "uid": "604ca80bbfea71f130e6b344",
+                "level": 38,
+                "xp": 606985,
+                "kills": 4326,
+                "deaths": 1793,
+                "br_wins": 2,
+                "classic_wins": {
+                    "death_match": 215,
+                    "missile_launch": 15,
+                    "vehicle_escort": 2,
+                    "package_drop": 1,
+                    "capture_point": 1
+                },
+                "jumps": 14577,
+                "coins": 220,
+                "kills_elo": 1597.22,
+                "games_elo": 1858.27,
+                "last_seen": 1677570898
             },
             {
                 "name": "sawa.jp",
@@ -1907,25 +1907,46 @@
                 "last_seen": 1752387756
             },
             {
-                "name": "red",
-                "uid": "5fae35cdd142afe530eae576",
-                "level": 46,
-                "xp": 800935,
-                "kills": 5961,
-                "deaths": 2790,
-                "br_wins": 2,
+                "name": "aoi_kousei m9(^\u0414^)",
+                "uid": "61e14312fd3c7a473ee1882d",
+                "level": 387,
+                "xp": 9332175,
+                "kills": 39679,
+                "deaths": 15674,
+                "br_wins": 35,
                 "classic_wins": {
-                    "death_match": 226,
-                    "missile_launch": 22,
-                    "vehicle_escort": 10,
-                    "package_drop": 5,
+                    "death_match": 1479,
+                    "missile_launch": 66,
+                    "vehicle_escort": 26,
+                    "package_drop": 11,
+                    "capture_point": 17
+                },
+                "jumps": 303442,
+                "coins": 2380,
+                "kills_elo": 1754.46,
+                "games_elo": 2095.75,
+                "last_seen": 1752843013
+            },
+            {
+                "name": "raifuu",
+                "uid": "6189f81ad142af97678e0bbf",
+                "level": 89,
+                "xp": 1880860,
+                "kills": 8955,
+                "deaths": 7206,
+                "br_wins": 20,
+                "classic_wins": {
+                    "death_match": 479,
+                    "missile_launch": 59,
+                    "vehicle_escort": 6,
+                    "package_drop": 11,
                     "capture_point": 4
                 },
-                "jumps": 21230,
-                "coins": 1930,
-                "kills_elo": 1605.73,
-                "games_elo": 1743.59,
-                "last_seen": 1744885937
+                "jumps": 125837,
+                "coins": 540,
+                "kills_elo": 1571.44,
+                "games_elo": 1395.8,
+                "last_seen": 1720769255
             },
             {
                 "name": "Alk",
@@ -1949,6 +1970,132 @@
                 "last_seen": 1743943909
             },
             {
+                "name": "Masahuking",
+                "uid": "634c9fe2bfea71a05223bb8b",
+                "level": 41,
+                "xp": 699835,
+                "kills": 2779,
+                "deaths": 1642,
+                "br_wins": 90,
+                "classic_wins": {
+                    "death_match": 96,
+                    "missile_launch": 9,
+                    "vehicle_escort": 1,
+                    "package_drop": 0,
+                    "capture_point": 4
+                },
+                "jumps": 80623,
+                "coins": 553,
+                "kills_elo": 1595.33,
+                "games_elo": 1432.69,
+                "last_seen": 1730087273
+            },
+            {
+                "name": "paper",
+                "uid": "5f5f57d0fd3c7a4e69c578f7",
+                "level": 57,
+                "xp": 1099280,
+                "kills": 6181,
+                "deaths": 2330,
+                "br_wins": 292,
+                "classic_wins": {
+                    "death_match": 196,
+                    "missile_launch": 28,
+                    "vehicle_escort": 6,
+                    "package_drop": 5,
+                    "capture_point": 0
+                },
+                "jumps": 58546,
+                "coins": 2670,
+                "kills_elo": 1633.56,
+                "games_elo": 1493.61,
+                "last_seen": 1731725793
+            },
+            {
+                "name": "146-TUF",
+                "uid": "631d3f6bbfea71ba58d70e86",
+                "level": 44,
+                "xp": 762300,
+                "kills": 3346,
+                "deaths": 2351,
+                "br_wins": 12,
+                "classic_wins": {
+                    "death_match": 199,
+                    "missile_launch": 6,
+                    "vehicle_escort": 0,
+                    "package_drop": 4,
+                    "capture_point": 3
+                },
+                "jumps": 39569,
+                "coins": 1068,
+                "kills_elo": 1535.28,
+                "games_elo": 1549.76,
+                "last_seen": 1754404841
+            },
+            {
+                "name": "ookamikun",
+                "uid": "6158fe54fd3c7a435a0dc367",
+                "level": 36,
+                "xp": 571065,
+                "kills": 3788,
+                "deaths": 2023,
+                "br_wins": 3,
+                "classic_wins": {
+                    "death_match": 187,
+                    "missile_launch": 12,
+                    "vehicle_escort": 7,
+                    "package_drop": 5,
+                    "capture_point": 4
+                },
+                "jumps": 14824,
+                "coins": 190,
+                "kills_elo": 1585.59,
+                "games_elo": 1762.57,
+                "last_seen": 1711094805
+            },
+            {
+                "name": "Fereiri no war",
+                "uid": "618ba008d142af99678e11e5",
+                "level": 114,
+                "xp": 2506690,
+                "kills": 16499,
+                "deaths": 8513,
+                "br_wins": 35,
+                "classic_wins": {
+                    "death_match": 633,
+                    "missile_launch": 38,
+                    "vehicle_escort": 12,
+                    "package_drop": 7,
+                    "capture_point": 2
+                },
+                "jumps": 155562,
+                "coins": 201,
+                "kills_elo": 1637,
+                "games_elo": 1571.16,
+                "last_seen": 1734577414
+            },
+            {
+                "name": "482K",
+                "uid": "63900feebfea71301c75c5b6",
+                "level": 110,
+                "xp": 2401150,
+                "kills": 15564,
+                "deaths": 9067,
+                "br_wins": 23,
+                "classic_wins": {
+                    "death_match": 904,
+                    "missile_launch": 56,
+                    "vehicle_escort": 16,
+                    "package_drop": 9,
+                    "capture_point": 26
+                },
+                "jumps": 156841,
+                "coins": 337,
+                "kills_elo": 1586.42,
+                "games_elo": 1601.77,
+                "last_seen": 1752401358
+            },
+            {
                 "name": "tamakage",
                 "uid": "6187d0edbfea714843509ce5",
                 "level": 26,
@@ -1968,6 +2115,48 @@
                 "kills_elo": 1566.78,
                 "games_elo": 1562.45,
                 "last_seen": 1743862236
+            },
+            {
+                "name": "luchs_II",
+                "uid": "5bf783f6d142afb305fe580d",
+                "level": 610,
+                "xp": 14923290,
+                "kills": 97427,
+                "deaths": 19549,
+                "br_wins": 145,
+                "classic_wins": {
+                    "death_match": 3532,
+                    "missile_launch": 246,
+                    "vehicle_escort": 51,
+                    "package_drop": 42,
+                    "capture_point": 48
+                },
+                "jumps": 522927,
+                "coins": 5680,
+                "kills_elo": 1941.99,
+                "games_elo": 2367.39,
+                "last_seen": 1711876942
+            },
+            {
+                "name": "_Iris1999__",
+                "uid": "61b8b022d142afa74038e332",
+                "level": 89,
+                "xp": 1895755,
+                "kills": 2572,
+                "deaths": 1632,
+                "br_wins": 83,
+                "classic_wins": {
+                    "death_match": 133,
+                    "missile_launch": 10,
+                    "vehicle_escort": 0,
+                    "package_drop": 2,
+                    "capture_point": 2
+                },
+                "jumps": 52586,
+                "coins": 210,
+                "kills_elo": 1597.72,
+                "games_elo": 1462.8,
+                "last_seen": 1712290679
             },
             {
                 "name": "Duelist Hero",
@@ -2033,151 +2222,25 @@
                 "last_seen": 1734840441
             },
             {
-                "name": "Fereiri no war",
-                "uid": "618ba008d142af99678e11e5",
-                "level": 114,
-                "xp": 2506690,
-                "kills": 16499,
-                "deaths": 8513,
-                "br_wins": 35,
-                "classic_wins": {
-                    "death_match": 633,
-                    "missile_launch": 38,
-                    "vehicle_escort": 12,
-                    "package_drop": 7,
-                    "capture_point": 2
-                },
-                "jumps": 155562,
-                "coins": 201,
-                "kills_elo": 1637,
-                "games_elo": 1571.16,
-                "last_seen": 1734577414
-            },
-            {
-                "name": "paper",
-                "uid": "5f5f57d0fd3c7a4e69c578f7",
-                "level": 57,
-                "xp": 1099280,
-                "kills": 6181,
-                "deaths": 2330,
-                "br_wins": 292,
-                "classic_wins": {
-                    "death_match": 196,
-                    "missile_launch": 28,
-                    "vehicle_escort": 6,
-                    "package_drop": 5,
-                    "capture_point": 0
-                },
-                "jumps": 58546,
-                "coins": 2670,
-                "kills_elo": 1633.56,
-                "games_elo": 1493.61,
-                "last_seen": 1731725793
-            },
-            {
-                "name": "Masahuking",
-                "uid": "634c9fe2bfea71a05223bb8b",
-                "level": 41,
-                "xp": 699835,
-                "kills": 2779,
-                "deaths": 1642,
-                "br_wins": 90,
-                "classic_wins": {
-                    "death_match": 96,
-                    "missile_launch": 9,
-                    "vehicle_escort": 1,
-                    "package_drop": 0,
-                    "capture_point": 4
-                },
-                "jumps": 80623,
-                "coins": 553,
-                "kills_elo": 1595.33,
-                "games_elo": 1432.69,
-                "last_seen": 1730087273
-            },
-            {
-                "name": "raifuu",
-                "uid": "6189f81ad142af97678e0bbf",
-                "level": 89,
-                "xp": 1880860,
-                "kills": 8955,
-                "deaths": 7206,
-                "br_wins": 20,
-                "classic_wins": {
-                    "death_match": 479,
-                    "missile_launch": 59,
-                    "vehicle_escort": 6,
-                    "package_drop": 11,
-                    "capture_point": 4
-                },
-                "jumps": 125837,
-                "coins": 540,
-                "kills_elo": 1571.44,
-                "games_elo": 1395.8,
-                "last_seen": 1720769255
-            },
-            {
-                "name": "\u7279\u653b\u306e\u524d\u7530",
-                "uid": "640da8f2d142af5a55effc38",
-                "level": 65,
-                "xp": 1276015,
-                "kills": 4316,
-                "deaths": 1846,
-                "br_wins": 45,
-                "classic_wins": {
-                    "death_match": 165,
-                    "missile_launch": 9,
-                    "vehicle_escort": 3,
-                    "package_drop": 3,
-                    "capture_point": 3
-                },
-                "jumps": 17851,
-                "coins": 1622,
-                "kills_elo": 1613.82,
-                "games_elo": 1484.33,
-                "last_seen": 1719050608
-            },
-            {
-                "name": "ookamikunn",
-                "uid": "604ca80bbfea71f130e6b344",
-                "level": 38,
-                "xp": 606985,
-                "kills": 4326,
-                "deaths": 1793,
+                "name": "red",
+                "uid": "5fae35cdd142afe530eae576",
+                "level": 46,
+                "xp": 800935,
+                "kills": 5961,
+                "deaths": 2790,
                 "br_wins": 2,
                 "classic_wins": {
-                    "death_match": 215,
-                    "missile_launch": 15,
-                    "vehicle_escort": 2,
-                    "package_drop": 1,
-                    "capture_point": 1
+                    "death_match": 226,
+                    "missile_launch": 22,
+                    "vehicle_escort": 10,
+                    "package_drop": 5,
+                    "capture_point": 4
                 },
-                "jumps": 14577,
-                "coins": 220,
-                "kills_elo": 1597.22,
-                "games_elo": 1858.27,
-                "last_seen": 1677570898
-            },
-            {
-                "name": "U.S.A.RMY",
-                "uid": "636d73b3bfea711109b2a37c",
-                "level": 65,
-                "xp": 1288000,
-                "kills": 6988,
-                "deaths": 2721,
-                "br_wins": 3,
-                "classic_wins": {
-                    "death_match": 321,
-                    "missile_launch": 24,
-                    "vehicle_escort": 13,
-                    "package_drop": 7,
-                    "capture_point": 5
-                },
-                "jumps": 59775,
-                "coins": 230,
-                "kills_elo": 1644.44,
-                "games_elo": 1655.48,
-                "last_seen": 1704261679
+                "jumps": 21230,
+                "coins": 1930,
+                "kills_elo": 1605.73,
+                "games_elo": 1743.59,
+                "last_seen": 1744885937
             },
             {
                 "name": "minami_sakura",
@@ -2199,69 +2262,6 @@
                 "kills_elo": 1160.79,
                 "games_elo": 1435.1,
                 "last_seen": 1699109756
-            },
-            {
-                "name": "_Iris1999__",
-                "uid": "61b8b022d142afa74038e332",
-                "level": 89,
-                "xp": 1895755,
-                "kills": 2572,
-                "deaths": 1632,
-                "br_wins": 83,
-                "classic_wins": {
-                    "death_match": 133,
-                    "missile_launch": 10,
-                    "vehicle_escort": 0,
-                    "package_drop": 2,
-                    "capture_point": 2
-                },
-                "jumps": 52586,
-                "coins": 210,
-                "kills_elo": 1597.72,
-                "games_elo": 1462.8,
-                "last_seen": 1712290679
-            },
-            {
-                "name": "luchs_II",
-                "uid": "5bf783f6d142afb305fe580d",
-                "level": 610,
-                "xp": 14923290,
-                "kills": 97427,
-                "deaths": 19549,
-                "br_wins": 145,
-                "classic_wins": {
-                    "death_match": 3532,
-                    "missile_launch": 246,
-                    "vehicle_escort": 51,
-                    "package_drop": 42,
-                    "capture_point": 48
-                },
-                "jumps": 522927,
-                "coins": 5680,
-                "kills_elo": 1941.99,
-                "games_elo": 2367.39,
-                "last_seen": 1711876942
-            },
-            {
-                "name": "ookamikun",
-                "uid": "6158fe54fd3c7a435a0dc367",
-                "level": 36,
-                "xp": 571065,
-                "kills": 3788,
-                "deaths": 2023,
-                "br_wins": 3,
-                "classic_wins": {
-                    "death_match": 187,
-                    "missile_launch": 12,
-                    "vehicle_escort": 7,
-                    "package_drop": 5,
-                    "capture_point": 4
-                },
-                "jumps": 14824,
-                "coins": 190,
-                "kills_elo": 1585.59,
-                "games_elo": 1762.57,
-                "last_seen": 1711094805
             }
         ],
         "avg_games_elo": 1691.22,
@@ -9957,6 +9957,27 @@
                 "last_seen": 1754510786
             },
             {
+                "name": "Norw12",
+                "uid": "647457c7bfea71f84a834ba2",
+                "level": 1897,
+                "xp": 47091435,
+                "kills": 147437,
+                "deaths": 55260,
+                "br_wins": 1739,
+                "classic_wins": {
+                    "death_match": 5646,
+                    "missile_launch": 347,
+                    "vehicle_escort": 158,
+                    "package_drop": 0,
+                    "capture_point": 157
+                },
+                "jumps": 1186776,
+                "coins": 3214,
+                "kills_elo": 1725.5,
+                "games_elo": 1982.56,
+                "last_seen": 1755935681
+            },
+            {
                 "name": " Did you get sniped?",
                 "uid": "647e02dbd142af01608f2675",
                 "level": 143,
@@ -9976,27 +9997,6 @@
                 "kills_elo": 1538.57,
                 "games_elo": 1538.78,
                 "last_seen": 1755088323
-            },
-            {
-                "name": "Norw12",
-                "uid": "647457c7bfea71f84a834ba2",
-                "level": 1897,
-                "xp": 47088015,
-                "kills": 147410,
-                "deaths": 55251,
-                "br_wins": 1739,
-                "classic_wins": {
-                    "death_match": 5646,
-                    "missile_launch": 347,
-                    "vehicle_escort": 157,
-                    "package_drop": 0,
-                    "capture_point": 157
-                },
-                "jumps": 1186570,
-                "coins": 3214,
-                "kills_elo": 1724.42,
-                "games_elo": 1982.56,
-                "last_seen": 1755934850
             },
             {
                 "name": "WhereDidtheCheseGo",
@@ -11617,23 +11617,23 @@
             }
         ],
         "avg_games_elo": 1772.11,
-        "avg_kills_elo": 1625.1,
+        "avg_kills_elo": 1625.11,
         "avg_level": 192.8,
-        "avg_xp": 4482233.1,
+        "avg_xp": 4482254.0,
         "br_wins": 19718,
         "classic_wins": {
             "death_match": 145696,
             "missile_launch": 10777,
-            "vehicle_escort": 4064,
+            "vehicle_escort": 4065,
             "package_drop": 1204,
             "capture_point": 2305
         },
         "coins": 132934,
-        "deaths": 1619589,
+        "deaths": 1619598,
         "kdr": 2.4,
-        "kills": 3836360,
+        "kills": 3836387,
         "seen_recently": 36,
-        "xp": 735086230
+        "xp": 735089650
     },
     "CANADA": {
         "squad_name": "CANADA",
@@ -13956,7 +13956,7 @@
                 "level": 129,
                 "xp": 2899500,
                 "kills": 19335,
-                "deaths": 316483,
+                "deaths": 316484,
                 "br_wins": 74,
                 "classic_wins": {
                     "death_match": 810,
@@ -13969,7 +13969,7 @@
                 "coins": 177991,
                 "kills_elo": 1502.89,
                 "games_elo": 1197.59,
-                "last_seen": 1755934660
+                "last_seen": 1755935297
             },
             {
                 "name": "DipperSteam",
@@ -14027,7 +14027,7 @@
             "capture_point": 6
         },
         "coins": 366249,
-        "deaths": 321971,
+        "deaths": 321972,
         "kdr": 0.1,
         "kills": 26175,
         "seen_recently": 1,
@@ -20729,22 +20729,22 @@
                 "name": "timeck",
                 "uid": "652a3870d142af471ebaa619",
                 "level": 117,
-                "xp": 2594810,
-                "kills": 18612,
-                "deaths": 7385,
+                "xp": 2598410,
+                "kills": 18645,
+                "deaths": 7391,
                 "br_wins": 90,
                 "classic_wins": {
-                    "death_match": 737,
+                    "death_match": 738,
                     "missile_launch": 39,
                     "vehicle_escort": 17,
                     "package_drop": 0,
                     "capture_point": 13
                 },
-                "jumps": 84491,
+                "jumps": 84629,
                 "coins": 175,
-                "kills_elo": 1675.14,
-                "games_elo": 2056.4,
-                "last_seen": 1755934982
+                "kills_elo": 1686.82,
+                "games_elo": 2059.58,
+                "last_seen": 1755935804
             },
             {
                 "name": "tibo",
@@ -20768,24 +20768,24 @@
                 "last_seen": 1754983599
             }
         ],
-        "avg_games_elo": 1800.02,
-        "avg_kills_elo": 1600.91,
+        "avg_games_elo": 1801.61,
+        "avg_kills_elo": 1606.75,
         "avg_level": 81.0,
-        "avg_xp": 1690800.0,
+        "avg_xp": 1692600.0,
         "br_wins": 172,
         "classic_wins": {
-            "death_match": 991,
+            "death_match": 992,
             "missile_launch": 49,
             "vehicle_escort": 17,
             "package_drop": 0,
             "capture_point": 16
         },
         "coins": 456,
-        "deaths": 10809,
+        "deaths": 10815,
         "kdr": 2.1,
-        "kills": 23197,
+        "kills": 23230,
         "seen_recently": 1,
-        "xp": 3381600
+        "xp": 3385200
     },
     "G.O.A.T.": {
         "squad_name": "G.O.A.T.",
@@ -21185,46 +21185,25 @@
         "squad_name": "GINGER",
         "members": [
             {
-                "name": "LoyaLsnaiL",
-                "uid": "632e1399d142afa35b16e63c",
-                "level": 35,
-                "xp": 534985,
-                "kills": 2853,
-                "deaths": 1881,
-                "br_wins": 17,
+                "name": "the grim reaper",
+                "uid": "5f664afcd142afd2446ecd39",
+                "level": 109,
+                "xp": 2388665,
+                "kills": 11579,
+                "deaths": 4679,
+                "br_wins": 99,
                 "classic_wins": {
-                    "death_match": 201,
-                    "missile_launch": 14,
-                    "vehicle_escort": 9,
+                    "death_match": 406,
+                    "missile_launch": 45,
+                    "vehicle_escort": 5,
                     "package_drop": 1,
-                    "capture_point": 3
-                },
-                "jumps": 27445,
-                "coins": 273,
-                "kills_elo": 1677.02,
-                "games_elo": 1443.84,
-                "last_seen": 1755474279
-            },
-            {
-                "name": "Owl Special Forces",
-                "uid": "6092b3cbd142af9b46ea5993",
-                "level": 55,
-                "xp": 1027380,
-                "kills": 7969,
-                "deaths": 4415,
-                "br_wins": 13,
-                "classic_wins": {
-                    "death_match": 325,
-                    "missile_launch": 26,
-                    "vehicle_escort": 7,
-                    "package_drop": 5,
                     "capture_point": 5
                 },
-                "jumps": 30778,
-                "coins": 420,
-                "kills_elo": 1588.37,
-                "games_elo": 1789.1,
-                "last_seen": 1753507972
+                "jumps": 68002,
+                "coins": 865,
+                "kills_elo": 1652.56,
+                "games_elo": 1834.23,
+                "last_seen": 1745036317
             },
             {
                 "name": "BOB_1",
@@ -21248,25 +21227,67 @@
                 "last_seen": 1692386184
             },
             {
-                "name": "the grim reaper",
-                "uid": "5f664afcd142afd2446ecd39",
-                "level": 109,
-                "xp": 2388665,
-                "kills": 11579,
-                "deaths": 4679,
-                "br_wins": 99,
+                "name": "Lt. RUS(bgrusbear)",
+                "uid": "63dd69ddd142af801c57eef7",
+                "level": 56,
+                "xp": 1055280,
+                "kills": 7301,
+                "deaths": 2614,
+                "br_wins": 3,
                 "classic_wins": {
-                    "death_match": 406,
-                    "missile_launch": 45,
-                    "vehicle_escort": 5,
-                    "package_drop": 1,
+                    "death_match": 229,
+                    "missile_launch": 15,
+                    "vehicle_escort": 10,
+                    "package_drop": 3,
+                    "capture_point": 2
+                },
+                "jumps": 36568,
+                "coins": 144,
+                "kills_elo": 1727.04,
+                "games_elo": 2153.72,
+                "last_seen": 1731287815
+            },
+            {
+                "name": "Owl Special Forces",
+                "uid": "6092b3cbd142af9b46ea5993",
+                "level": 55,
+                "xp": 1027380,
+                "kills": 7969,
+                "deaths": 4415,
+                "br_wins": 13,
+                "classic_wins": {
+                    "death_match": 325,
+                    "missile_launch": 26,
+                    "vehicle_escort": 7,
+                    "package_drop": 5,
                     "capture_point": 5
                 },
-                "jumps": 68002,
-                "coins": 865,
-                "kills_elo": 1652.56,
-                "games_elo": 1834.23,
-                "last_seen": 1745036317
+                "jumps": 30778,
+                "coins": 420,
+                "kills_elo": 1588.37,
+                "games_elo": 1789.1,
+                "last_seen": 1753507972
+            },
+            {
+                "name": "LoyaLsnaiL",
+                "uid": "632e1399d142afa35b16e63c",
+                "level": 35,
+                "xp": 534985,
+                "kills": 2853,
+                "deaths": 1881,
+                "br_wins": 17,
+                "classic_wins": {
+                    "death_match": 201,
+                    "missile_launch": 14,
+                    "vehicle_escort": 9,
+                    "package_drop": 1,
+                    "capture_point": 3
+                },
+                "jumps": 27445,
+                "coins": 273,
+                "kills_elo": 1677.02,
+                "games_elo": 1443.84,
+                "last_seen": 1755474279
             },
             {
                 "name": "Unagami",
@@ -21290,298 +21311,25 @@
                 "last_seen": 1740324528
             },
             {
-                "name": "Lt. RUS(bgrusbear)",
-                "uid": "63dd69ddd142af801c57eef7",
-                "level": 56,
-                "xp": 1055280,
-                "kills": 7301,
-                "deaths": 2614,
-                "br_wins": 3,
+                "name": "SNIPE",
+                "uid": "5f6b5794d142af4f6381765d",
+                "level": 54,
+                "xp": 1019165,
+                "kills": 6222,
+                "deaths": 6193,
+                "br_wins": 13,
                 "classic_wins": {
-                    "death_match": 229,
-                    "missile_launch": 15,
-                    "vehicle_escort": 10,
-                    "package_drop": 3,
-                    "capture_point": 2
+                    "death_match": 396,
+                    "missile_launch": 23,
+                    "vehicle_escort": 5,
+                    "package_drop": 5,
+                    "capture_point": 1
                 },
-                "jumps": 36568,
-                "coins": 144,
-                "kills_elo": 1727.04,
-                "games_elo": 2153.72,
-                "last_seen": 1731287815
-            },
-            {
-                "name": "Mr.Pip",
-                "uid": "637cffd7bfea71fe7b8c8372",
-                "level": 51,
-                "xp": 932465,
-                "kills": 1539,
-                "deaths": 1084,
-                "br_wins": 3,
-                "classic_wins": {
-                    "death_match": 81,
-                    "missile_launch": 10,
-                    "vehicle_escort": 2,
-                    "package_drop": 2,
-                    "capture_point": 3
-                },
-                "jumps": 16284,
-                "coins": 352,
-                "kills_elo": 1591.42,
-                "games_elo": 1629.19,
-                "last_seen": 1729627821
-            },
-            {
-                "name": "Shadowy",
-                "uid": "61a18fa8d142af3124f79cc2",
-                "level": 41,
-                "xp": 692860,
-                "kills": 2423,
-                "deaths": 1467,
-                "br_wins": 8,
-                "classic_wins": {
-                    "death_match": 137,
-                    "missile_launch": 11,
-                    "vehicle_escort": 2,
-                    "package_drop": 0,
-                    "capture_point": 2
-                },
-                "jumps": 30791,
-                "coins": 1270,
-                "kills_elo": 1598.74,
-                "games_elo": 1537.64,
-                "last_seen": 1718642778
-            },
-            {
-                "name": "King_of_Kings",
-                "uid": "64039271d142af532a0c2f0c",
-                "level": 32,
-                "xp": 454775,
-                "kills": 1362,
-                "deaths": 1010,
-                "br_wins": 1,
-                "classic_wins": {
-                    "death_match": 77,
-                    "missile_launch": 11,
-                    "vehicle_escort": 1,
-                    "package_drop": 2,
-                    "capture_point": 2
-                },
-                "jumps": 12135,
-                "coins": 291,
-                "kills_elo": 1552.8,
-                "games_elo": 1542.28,
-                "last_seen": 1684002587
-            },
-            {
-                "name": "Walmart Bag",
-                "uid": "6391130dbfea71ea3975c5d8",
-                "level": 36,
-                "xp": 563185,
-                "kills": 273,
-                "deaths": 277,
-                "br_wins": 7,
-                "classic_wins": {
-                    "death_match": 18,
-                    "missile_launch": 1,
-                    "vehicle_escort": 3,
-                    "package_drop": 0,
-                    "capture_point": 0
-                },
-                "jumps": 4135,
-                "coins": 0,
-                "kills_elo": 1498.46,
-                "games_elo": 1544.8,
-                "last_seen": 1684877021
-            },
-            {
-                "name": "Messi232",
-                "uid": "6369f4f3d142afcc6e891081",
-                "level": 77,
-                "xp": 1596630,
-                "kills": 11026,
-                "deaths": 6545,
-                "br_wins": 33,
-                "classic_wins": {
-                    "death_match": 568,
-                    "missile_launch": 37,
-                    "vehicle_escort": 7,
-                    "package_drop": 4,
-                    "capture_point": 7
-                },
-                "jumps": 92268,
-                "coins": 723,
-                "kills_elo": 1631.6,
-                "games_elo": 1517.41,
-                "last_seen": 1693096565
-            },
-            {
-                "name": "Mr.Guest321",
-                "uid": "6349fc3cbfea71060d62bbbb",
-                "level": 86,
-                "xp": 1813805,
-                "kills": 10950,
-                "deaths": 5299,
-                "br_wins": 69,
-                "classic_wins": {
-                    "death_match": 557,
-                    "missile_launch": 34,
-                    "vehicle_escort": 19,
-                    "package_drop": 7,
-                    "capture_point": 9
-                },
-                "jumps": 49894,
-                "coins": 2050,
-                "kills_elo": 1598.82,
-                "games_elo": 1574.87,
-                "last_seen": 1692306977
-            },
-            {
-                "name": "DarkMaster",
-                "uid": "62b9cfdbd142afd9681a48bb",
-                "level": 67,
-                "xp": 1337860,
-                "kills": 5336,
-                "deaths": 3524,
-                "br_wins": 0,
-                "classic_wins": {
-                    "death_match": 306,
-                    "missile_launch": 18,
-                    "vehicle_escort": 7,
-                    "package_drop": 4,
-                    "capture_point": 6
-                },
-                "jumps": 38785,
-                "coins": 90,
-                "kills_elo": 1616.88,
-                "games_elo": 1788.01,
-                "last_seen": 1693934704
-            },
-            {
-                "name": "-_ODDS_-",
-                "uid": "626c7db4d142af104b80606b",
-                "level": 35,
-                "xp": 537005,
-                "kills": 3378,
-                "deaths": 1945,
-                "br_wins": 15,
-                "classic_wins": {
-                    "death_match": 191,
-                    "missile_launch": 20,
-                    "vehicle_escort": 8,
-                    "package_drop": 3,
-                    "capture_point": 2
-                },
-                "jumps": 28932,
-                "coins": 50,
-                "kills_elo": 1604.42,
-                "games_elo": 1698.3,
-                "last_seen": 1689737938
-            },
-            {
-                "name": "mr. bacon",
-                "uid": "61c638d4bfea71952e823481",
-                "level": 52,
-                "xp": 960350,
-                "kills": 5525,
-                "deaths": 2192,
-                "br_wins": 35,
-                "classic_wins": {
-                    "death_match": 160,
-                    "missile_launch": 13,
-                    "vehicle_escort": 3,
-                    "package_drop": 2,
-                    "capture_point": 3
-                },
-                "jumps": 39369,
-                "coins": 790,
-                "kills_elo": 1685.42,
-                "games_elo": 1895.43,
-                "last_seen": 1687531047
-            },
-            {
-                "name": "supa socks",
-                "uid": "61b3fb84d142af1240125aa0",
-                "level": 46,
-                "xp": 823755,
-                "kills": 1062,
-                "deaths": 951,
-                "br_wins": 2,
-                "classic_wins": {
-                    "death_match": 65,
-                    "missile_launch": 0,
-                    "vehicle_escort": 0,
-                    "package_drop": 1,
-                    "capture_point": 0
-                },
-                "jumps": 6831,
-                "coins": 260,
-                "kills_elo": 1550.07,
-                "games_elo": 1289.5,
-                "last_seen": 1686098521
-            },
-            {
-                "name": "Commannder Cody",
-                "uid": "6174c205d142af991e2ab5fb",
-                "level": 50,
-                "xp": 917600,
-                "kills": 4517,
-                "deaths": 3069,
-                "br_wins": 1,
-                "classic_wins": {
-                    "death_match": 265,
-                    "missile_launch": 6,
-                    "vehicle_escort": 4,
-                    "package_drop": 2,
-                    "capture_point": 3
-                },
-                "jumps": 27986,
-                "coins": 954,
-                "kills_elo": 1644.86,
-                "games_elo": 1489.18,
-                "last_seen": 1686098518
-            },
-            {
-                "name": "Williezmone",
-                "uid": "611d386dd142af4462bb30a9",
-                "level": 26,
-                "xp": 324295,
-                "kills": 1030,
-                "deaths": 1375,
-                "br_wins": 1,
-                "classic_wins": {
-                    "death_match": 116,
-                    "missile_launch": 2,
-                    "vehicle_escort": 2,
-                    "package_drop": 0,
-                    "capture_point": 0
-                },
-                "jumps": 15732,
-                "coins": 145,
-                "kills_elo": 1383.11,
-                "games_elo": 1498.71,
-                "last_seen": 1693710153
-            },
-            {
-                "name": "Mami",
-                "uid": "602d686fd142aff1404b46ab",
-                "level": 60,
-                "xp": 1161590,
-                "kills": 2376,
-                "deaths": 2193,
-                "br_wins": 0,
-                "classic_wins": {
-                    "death_match": 151,
-                    "missile_launch": 9,
-                    "vehicle_escort": 2,
-                    "package_drop": 2,
-                    "capture_point": 0
-                },
-                "jumps": 18171,
-                "coins": 1591,
-                "kills_elo": 1573.71,
-                "games_elo": 1552.3,
-                "last_seen": 1684847659
+                "jumps": 56276,
+                "coins": 281,
+                "kills_elo": 1478.43,
+                "games_elo": 1382.8,
+                "last_seen": 1685103930
             },
             {
                 "name": " AyeZyee",
@@ -21605,25 +21353,277 @@
                 "last_seen": 1699015539
             },
             {
-                "name": "SNIPE",
-                "uid": "5f6b5794d142af4f6381765d",
-                "level": 54,
-                "xp": 1019165,
-                "kills": 6222,
-                "deaths": 6193,
-                "br_wins": 13,
+                "name": "Mami",
+                "uid": "602d686fd142aff1404b46ab",
+                "level": 60,
+                "xp": 1161590,
+                "kills": 2376,
+                "deaths": 2193,
+                "br_wins": 0,
                 "classic_wins": {
-                    "death_match": 396,
-                    "missile_launch": 23,
-                    "vehicle_escort": 5,
-                    "package_drop": 5,
-                    "capture_point": 1
+                    "death_match": 151,
+                    "missile_launch": 9,
+                    "vehicle_escort": 2,
+                    "package_drop": 2,
+                    "capture_point": 0
                 },
-                "jumps": 56276,
-                "coins": 281,
-                "kills_elo": 1478.43,
-                "games_elo": 1382.8,
-                "last_seen": 1685103930
+                "jumps": 18171,
+                "coins": 1591,
+                "kills_elo": 1573.71,
+                "games_elo": 1552.3,
+                "last_seen": 1684847659
+            },
+            {
+                "name": "Williezmone",
+                "uid": "611d386dd142af4462bb30a9",
+                "level": 26,
+                "xp": 324295,
+                "kills": 1030,
+                "deaths": 1375,
+                "br_wins": 1,
+                "classic_wins": {
+                    "death_match": 116,
+                    "missile_launch": 2,
+                    "vehicle_escort": 2,
+                    "package_drop": 0,
+                    "capture_point": 0
+                },
+                "jumps": 15732,
+                "coins": 145,
+                "kills_elo": 1383.11,
+                "games_elo": 1498.71,
+                "last_seen": 1693710153
+            },
+            {
+                "name": "Commannder Cody",
+                "uid": "6174c205d142af991e2ab5fb",
+                "level": 50,
+                "xp": 917600,
+                "kills": 4517,
+                "deaths": 3069,
+                "br_wins": 1,
+                "classic_wins": {
+                    "death_match": 265,
+                    "missile_launch": 6,
+                    "vehicle_escort": 4,
+                    "package_drop": 2,
+                    "capture_point": 3
+                },
+                "jumps": 27986,
+                "coins": 954,
+                "kills_elo": 1644.86,
+                "games_elo": 1489.18,
+                "last_seen": 1686098518
+            },
+            {
+                "name": "Shadowy",
+                "uid": "61a18fa8d142af3124f79cc2",
+                "level": 41,
+                "xp": 692860,
+                "kills": 2423,
+                "deaths": 1467,
+                "br_wins": 8,
+                "classic_wins": {
+                    "death_match": 137,
+                    "missile_launch": 11,
+                    "vehicle_escort": 2,
+                    "package_drop": 0,
+                    "capture_point": 2
+                },
+                "jumps": 30791,
+                "coins": 1270,
+                "kills_elo": 1598.74,
+                "games_elo": 1537.64,
+                "last_seen": 1718642778
+            },
+            {
+                "name": "supa socks",
+                "uid": "61b3fb84d142af1240125aa0",
+                "level": 46,
+                "xp": 823755,
+                "kills": 1062,
+                "deaths": 951,
+                "br_wins": 2,
+                "classic_wins": {
+                    "death_match": 65,
+                    "missile_launch": 0,
+                    "vehicle_escort": 0,
+                    "package_drop": 1,
+                    "capture_point": 0
+                },
+                "jumps": 6831,
+                "coins": 260,
+                "kills_elo": 1550.07,
+                "games_elo": 1289.5,
+                "last_seen": 1686098521
+            },
+            {
+                "name": "mr. bacon",
+                "uid": "61c638d4bfea71952e823481",
+                "level": 52,
+                "xp": 960350,
+                "kills": 5525,
+                "deaths": 2192,
+                "br_wins": 35,
+                "classic_wins": {
+                    "death_match": 160,
+                    "missile_launch": 13,
+                    "vehicle_escort": 3,
+                    "package_drop": 2,
+                    "capture_point": 3
+                },
+                "jumps": 39369,
+                "coins": 790,
+                "kills_elo": 1685.42,
+                "games_elo": 1895.43,
+                "last_seen": 1687531047
+            },
+            {
+                "name": "-_ODDS_-",
+                "uid": "626c7db4d142af104b80606b",
+                "level": 35,
+                "xp": 537005,
+                "kills": 3378,
+                "deaths": 1945,
+                "br_wins": 15,
+                "classic_wins": {
+                    "death_match": 191,
+                    "missile_launch": 20,
+                    "vehicle_escort": 8,
+                    "package_drop": 3,
+                    "capture_point": 2
+                },
+                "jumps": 28932,
+                "coins": 50,
+                "kills_elo": 1604.42,
+                "games_elo": 1698.3,
+                "last_seen": 1689737938
+            },
+            {
+                "name": "DarkMaster",
+                "uid": "62b9cfdbd142afd9681a48bb",
+                "level": 67,
+                "xp": 1337860,
+                "kills": 5336,
+                "deaths": 3524,
+                "br_wins": 0,
+                "classic_wins": {
+                    "death_match": 306,
+                    "missile_launch": 18,
+                    "vehicle_escort": 7,
+                    "package_drop": 4,
+                    "capture_point": 6
+                },
+                "jumps": 38785,
+                "coins": 90,
+                "kills_elo": 1616.88,
+                "games_elo": 1788.01,
+                "last_seen": 1693934704
+            },
+            {
+                "name": "Mr.Guest321",
+                "uid": "6349fc3cbfea71060d62bbbb",
+                "level": 86,
+                "xp": 1813805,
+                "kills": 10950,
+                "deaths": 5299,
+                "br_wins": 69,
+                "classic_wins": {
+                    "death_match": 557,
+                    "missile_launch": 34,
+                    "vehicle_escort": 19,
+                    "package_drop": 7,
+                    "capture_point": 9
+                },
+                "jumps": 49894,
+                "coins": 2050,
+                "kills_elo": 1598.82,
+                "games_elo": 1574.87,
+                "last_seen": 1692306977
+            },
+            {
+                "name": "Messi232",
+                "uid": "6369f4f3d142afcc6e891081",
+                "level": 77,
+                "xp": 1596630,
+                "kills": 11026,
+                "deaths": 6545,
+                "br_wins": 33,
+                "classic_wins": {
+                    "death_match": 568,
+                    "missile_launch": 37,
+                    "vehicle_escort": 7,
+                    "package_drop": 4,
+                    "capture_point": 7
+                },
+                "jumps": 92268,
+                "coins": 723,
+                "kills_elo": 1631.6,
+                "games_elo": 1517.41,
+                "last_seen": 1693096565
+            },
+            {
+                "name": "Mr.Pip",
+                "uid": "637cffd7bfea71fe7b8c8372",
+                "level": 51,
+                "xp": 932465,
+                "kills": 1539,
+                "deaths": 1084,
+                "br_wins": 3,
+                "classic_wins": {
+                    "death_match": 81,
+                    "missile_launch": 10,
+                    "vehicle_escort": 2,
+                    "package_drop": 2,
+                    "capture_point": 3
+                },
+                "jumps": 16284,
+                "coins": 352,
+                "kills_elo": 1591.42,
+                "games_elo": 1629.19,
+                "last_seen": 1729627821
+            },
+            {
+                "name": "Walmart Bag",
+                "uid": "6391130dbfea71ea3975c5d8",
+                "level": 36,
+                "xp": 563185,
+                "kills": 273,
+                "deaths": 277,
+                "br_wins": 7,
+                "classic_wins": {
+                    "death_match": 18,
+                    "missile_launch": 1,
+                    "vehicle_escort": 3,
+                    "package_drop": 0,
+                    "capture_point": 0
+                },
+                "jumps": 4135,
+                "coins": 0,
+                "kills_elo": 1498.46,
+                "games_elo": 1544.8,
+                "last_seen": 1684877021
+            },
+            {
+                "name": "King_of_Kings",
+                "uid": "64039271d142af532a0c2f0c",
+                "level": 32,
+                "xp": 454775,
+                "kills": 1362,
+                "deaths": 1010,
+                "br_wins": 1,
+                "classic_wins": {
+                    "death_match": 77,
+                    "missile_launch": 11,
+                    "vehicle_escort": 1,
+                    "package_drop": 2,
+                    "capture_point": 2
+                },
+                "jumps": 12135,
+                "coins": 291,
+                "kills_elo": 1552.8,
+                "games_elo": 1542.28,
+                "last_seen": 1684002587
             }
         ],
         "avg_games_elo": 1597.8,
@@ -31283,7 +31283,7 @@
                 "coins": 71,
                 "kills_elo": 1645.35,
                 "games_elo": 1807.25,
-                "last_seen": 1755935098
+                "last_seen": 1755935116
             }
         ],
         "avg_games_elo": 1807.25,
@@ -33405,7 +33405,7 @@
                 "name": "M0rtal___",
                 "uid": "6867a8d0bfea713009b5dbc9",
                 "level": 28,
-                "xp": 364895,
+                "xp": 365105,
                 "kills": 2204,
                 "deaths": 537,
                 "br_wins": 0,
@@ -33420,7 +33420,7 @@
                 "coins": 854,
                 "kills_elo": 1846.49,
                 "games_elo": 1625.69,
-                "last_seen": 1755934517
+                "last_seen": 1755935960
             },
             {
                 "name": "BRYAN[FIGHTER]",
@@ -34056,22 +34056,22 @@
                 "name": "PaPaShAnGo",
                 "uid": "632c3c16fe3c7a4a28dc18ae",
                 "level": 125,
-                "xp": 2778685,
-                "kills": 22314,
-                "deaths": 11748,
+                "xp": 2781235,
+                "kills": 22340,
+                "deaths": 11757,
                 "br_wins": 0,
                 "classic_wins": {
-                    "death_match": 856,
+                    "death_match": 857,
                     "missile_launch": 71,
                     "vehicle_escort": 49,
                     "package_drop": 9,
                     "capture_point": 30
                 },
-                "jumps": 75852,
+                "jumps": 75948,
                 "coins": 6310,
-                "kills_elo": 1614.76,
+                "kills_elo": 1613.25,
                 "games_elo": 1845.97,
-                "last_seen": 1755767361
+                "last_seen": 1755935926
             },
             {
                 "name": "AndreySm",
@@ -34390,23 +34390,23 @@
             }
         ],
         "avg_games_elo": 1824.6,
-        "avg_kills_elo": 1648.1,
+        "avg_kills_elo": 1648.07,
         "avg_level": 233.1,
-        "avg_xp": 5490123.9,
+        "avg_xp": 5490180.2,
         "br_wins": 3951,
         "classic_wins": {
-            "death_match": 55217,
+            "death_match": 55218,
             "missile_launch": 4878,
             "vehicle_escort": 1881,
             "package_drop": 280,
             "capture_point": 878
         },
         "coins": 41951,
-        "deaths": 563175,
+        "deaths": 563184,
         "kdr": 2.4,
-        "kills": 1360212,
+        "kills": 1360238,
         "seen_recently": 22,
-        "xp": 269016070
+        "xp": 269018830
     },
     "PANDA": {
         "squad_name": "PANDA",
@@ -34736,22 +34736,22 @@
                 "name": "Journeyman",
                 "uid": "6780c09cfd3c7a835d37b08f",
                 "level": 181,
-                "xp": 4175760,
-                "kills": 27546,
-                "deaths": 5056,
+                "xp": 4182505,
+                "kills": 27584,
+                "deaths": 5059,
                 "br_wins": 20,
                 "classic_wins": {
-                    "death_match": 992,
+                    "death_match": 994,
                     "missile_launch": 27,
                     "vehicle_escort": 12,
                     "package_drop": 0,
                     "capture_point": 8
                 },
-                "jumps": 100965,
+                "jumps": 101078,
                 "coins": 3884,
-                "kills_elo": 1768.46,
-                "games_elo": 2178.09,
-                "last_seen": 1755935147
+                "kills_elo": 1767.13,
+                "games_elo": 2181.1,
+                "last_seen": 1755935978
             },
             {
                 "name": "Forcett",
@@ -35174,24 +35174,24 @@
                 "last_seen": 1705730147
             }
         ],
-        "avg_games_elo": 1780.2,
-        "avg_kills_elo": 1620.33,
+        "avg_games_elo": 1780.31,
+        "avg_kills_elo": 1620.28,
         "avg_level": 219.6,
-        "avg_xp": 5149828.0,
+        "avg_xp": 5150077.8,
         "br_wins": 971,
         "classic_wins": {
-            "death_match": 35247,
+            "death_match": 35249,
             "missile_launch": 2406,
             "vehicle_escort": 813,
             "package_drop": 248,
             "capture_point": 461
         },
         "coins": 24093,
-        "deaths": 324395,
+        "deaths": 324398,
         "kdr": 3.0,
-        "kills": 966861,
+        "kills": 966899,
         "seen_recently": 5,
-        "xp": 139045355
+        "xp": 139052100
     },
     "PDI": {
         "squad_name": "PDI",
@@ -42693,6 +42693,27 @@
         "squad_name": "SOF",
         "members": [
             {
+                "name": "arfa jp kyouto",
+                "uid": "67c297d6d142af254d7b402b",
+                "level": 169,
+                "xp": 3875905,
+                "kills": 20173,
+                "deaths": 8956,
+                "br_wins": 280,
+                "classic_wins": {
+                    "death_match": 822,
+                    "missile_launch": 47,
+                    "vehicle_escort": 28,
+                    "package_drop": 0,
+                    "capture_point": 8
+                },
+                "jumps": 223654,
+                "coins": 2,
+                "kills_elo": 1710.65,
+                "games_elo": 1766.45,
+                "last_seen": 1755935300
+            },
+            {
                 "name": "oiyan",
                 "uid": "67dd137abfea712a445c07d9",
                 "level": 35,
@@ -42754,27 +42775,6 @@
                 "kills_elo": 1656.26,
                 "games_elo": 1610.45,
                 "last_seen": 1755927313
-            },
-            {
-                "name": "arfa jp kyouto",
-                "uid": "67c297d6d142af254d7b402b",
-                "level": 169,
-                "xp": 3875135,
-                "kills": 20165,
-                "deaths": 8956,
-                "br_wins": 279,
-                "classic_wins": {
-                    "death_match": 822,
-                    "missile_launch": 47,
-                    "vehicle_escort": 28,
-                    "package_drop": 0,
-                    "capture_point": 8
-                },
-                "jumps": 223457,
-                "coins": 2,
-                "kills_elo": 1710.65,
-                "games_elo": 1766.45,
-                "last_seen": 1755935229
             },
             {
                 "name": "Tempura-JP",
@@ -42864,8 +42864,8 @@
         "avg_games_elo": 1674.12,
         "avg_kills_elo": 1639.36,
         "avg_level": 118.4,
-        "avg_xp": 2619052.5,
-        "br_wins": 844,
+        "avg_xp": 2619148.8,
+        "br_wins": 845,
         "classic_wins": {
             "death_match": 4457,
             "missile_launch": 342,
@@ -42876,9 +42876,9 @@
         "coins": 6783,
         "deaths": 46827,
         "kdr": 2.3,
-        "kills": 106496,
+        "kills": 106504,
         "seen_recently": 8,
-        "xp": 20952420
+        "xp": 20953190
     },
     "SOLDERS": {
         "squad_name": "SOLDERS",
@@ -45454,7 +45454,7 @@
                 "name": "Magyar_Harcos",
                 "uid": "5fc1c059fd3c7a264fa26da3",
                 "level": 175,
-                "xp": 4030505,
+                "xp": 4030515,
                 "kills": 13318,
                 "deaths": 3580,
                 "br_wins": 1130,
@@ -45465,11 +45465,11 @@
                     "package_drop": 1,
                     "capture_point": 2
                 },
-                "jumps": 144122,
+                "jumps": 144123,
                 "coins": 1216,
                 "kills_elo": 1555.86,
                 "games_elo": 1481.69,
-                "last_seen": 1755602577
+                "last_seen": 1755935413
             },
             {
                 "name": "shadow22",
@@ -45496,7 +45496,7 @@
         "avg_games_elo": 1608.36,
         "avg_kills_elo": 1558.49,
         "avg_level": 137.0,
-        "avg_xp": 3085322.5,
+        "avg_xp": 3085327.5,
         "br_wins": 1745,
         "classic_wins": {
             "death_match": 409,
@@ -45510,7 +45510,7 @@
         "kdr": 3.4,
         "kills": 24662,
         "seen_recently": 1,
-        "xp": 6170645
+        "xp": 6170655
     },
     "TGK": {
         "squad_name": "TGK",
@@ -47132,9 +47132,9 @@
                 "name": "HARUSAME",
                 "uid": "672ed7b2bfea71ac0a4bbf84",
                 "level": 139,
-                "xp": 3138855,
-                "kills": 18029,
-                "deaths": 9667,
+                "xp": 3140255,
+                "kills": 18044,
+                "deaths": 9676,
                 "br_wins": 40,
                 "classic_wins": {
                     "death_match": 903,
@@ -47143,11 +47143,11 @@
                     "package_drop": 0,
                     "capture_point": 18
                 },
-                "jumps": 156954,
+                "jumps": 157100,
                 "coins": 111,
-                "kills_elo": 1636.61,
+                "kills_elo": 1638.05,
                 "games_elo": 1660.13,
-                "last_seen": 1755935255
+                "last_seen": 1755936112
             },
             {
                 "name": "2 Weeks of Rust",
@@ -47592,9 +47592,9 @@
             }
         ],
         "avg_games_elo": 1887.44,
-        "avg_kills_elo": 1721.46,
+        "avg_kills_elo": 1721.49,
         "avg_level": 342.2,
-        "avg_xp": 8217897.4,
+        "avg_xp": 8217934.2,
         "br_wins": 3193,
         "classic_wins": {
             "death_match": 54879,
@@ -47604,11 +47604,11 @@
             "capture_point": 825
         },
         "coins": 14650,
-        "deaths": 509674,
+        "deaths": 509683,
         "kdr": 3.0,
-        "kills": 1510302,
+        "kills": 1510317,
         "seen_recently": 21,
-        "xp": 312280100
+        "xp": 312281500
     },
     "UNSC": {
         "squad_name": "UNSC",
