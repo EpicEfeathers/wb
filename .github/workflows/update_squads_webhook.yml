@@ -27,7 +27,7 @@ jobs:
         run: pip install aiohttp
 
       - name: Run squad info update script
-        run: python squad_info/main.py
+        run: #python squad_info/main.py
 
       - name: Commit and push changes # who it was changed by, etc.
         run: |
